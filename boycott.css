@@ -1,0 +1,125 @@
+body {
+    background-color: #1D283A;
+    font-family: "Open Sans", Arial;
+  }
+  
+  form {
+    line-height: 27px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0CA6E9;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #F471B5;
+  }
+
+  h1 {
+    color: #0CA6E9;
+  }
+  
+  h6 {
+    color: #0CA6E9;
+  }
+
+  p {
+    color: #1D283A;
+    display: inline;
+  }
+
+  table, th, td {
+    border: 2px outset;
+  }
+
+  #details {
+    border: groove;
+    position: relative;
+    left: 95px;
+    line-height: 45px;
+  }
+
+  #post {
+    position: relative;
+    left: 10px;
+    padding: 50px;
+  }
+
+  .dot {
+    background-color: #0CA6E9;
+    color :white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 30px;
+  }
+
+  .info {
+    background-image: url('images/crumpledpaper.jpg');
+    border: 2px solid #0F1729;
+    color: #1D283A;
+    padding: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 600px;
+    width: 600px;
+    border-radius: 25px;
+  }
+   
+  #main {
+    background-color: #0F1729;
+    border: 2px solid #0F1729;
+    text-align: center;
+    height: 1000px;
+    border-radius: 15px;
+    margin: 2% 10%;
+    overflow: auto;
+    padding: 65px;
+    color: #0CA6E9;
+  }
+  
+  
+  #main:hover {
+    box-shadow: 5px 5px 15px #0CA6E9;
+    }
+    
+  #top {
+    margin: 2% 10%;
+    border-radius: 15px;
+    text-align: center;
+    text-shadow: 4px 4px 4px white;
+    font-size: 40px;
+  }
+
+   #nav {
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    left: 1150px;
+}
+
+.navigation a {
+    color: #1D283A;
+    background-color: #0CA6E9;
+    border: 2px solid #0CA6E9;
+    padding: 5px 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 25%;
+    text-align: center;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.navigation a:hover {
+    background-color:#1D283A;
+    color:#0CA6E9;
+
+}
+
