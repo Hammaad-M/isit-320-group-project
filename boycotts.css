@@ -1,3 +1,102 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+#informedbuying{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 35px;
+
+  background: linear-gradient(
+    to right, 
+    hsl(170, 93%, 74%),
+    hsl(190, 89%, 60%),
+    hsl(180, 93%, 74%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+
+  
+}
+#rscontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.si-header {
+  background-image: url("si-background.png");
+  border-radius: 0.5rem;
+}
+
+#row2{
+display: flex;
+margin: 5px;
+}
+#row3{
+display: flex;
+flex-grow: 7;
+background-color: violet;
+margin: 5px;
+}
+
+#reg-btn {
+  margin: 2px
+}
+
+#si-btn {
+  margin: 2px
+}
+
+#si-left
+{
+  margin: 20px;
+  text-align: center;  
+}
+#si-left > *{
+
+  margin: 20px
+}
+#si-left-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#si-left-subtitle{
+  font-style: italic;
+}
+
+#si-right{
+  background-color: blue;
+  margin: 20px
+}
+
+#dashboard
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.si-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url("si-background.png");
+  border-radius: 0.5rem;
+  
+}
+.si-footer > *{
+  margin: 50px
+}
+
+
 /*
 ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
