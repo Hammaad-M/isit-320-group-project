@@ -1,5 +1,9 @@
 import { auth, provider } from "./firebaseconfig.js";
-import { signInWithPopup } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
