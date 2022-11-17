@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import {
   getAuth,
-  signInWithPopup,
+  signInWithPopup,  
   GoogleAuthProvider,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
