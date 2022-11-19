@@ -2,44 +2,70 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:  #0F1729;
+    /* background-color: #212121; */
+    
+}
 
-.container{  
+form{  
     margin-right: auto;
     margin-left: auto;
     max-width: 1000px;
-    background-color: silver;
+    /* background-color: #323232; */
+    background-color: #1D283A;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
   }
+
+p, h3 {
+    /* color: rgba(195, 195, 195, 0.89); */
+    color: #828DF8;
+}
 
 /* .header{
     background-image: linear-gradient(to right, #3ABFF8, #828DF8 );
     height: 200px;
 } */
 
-.container{
+.authorName input{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: inherit;
-    padding: 3px;
+    justify-content: space-between; 
+    float: left;
+    width: 49.5%;
+    padding: 5px;
+    top: 10px;
 }
 
-body {
-    background-color:rgb(16, 16, 61)
-    
-}
-
-.boycottDescription{
-    height: 100px;
-}
-
-input, textarea{
+textarea, #boycottName, #companyName{
     width: calc(100% - 10px);
     padding: 5px;
 }
 
-button {
-    width: auto;
-    background-color: lightblue;
-    cursor: pointer;
-    align-self: center;
+.buttonArea{
+    text-align: center;
 }
+
+.createBoycottButton {
+    background-color: #0CA6E9;
+    color: #0F1729;
+    cursor: pointer;
+    height: 50px;
+    width: 125px;
+}
+
+.createBoycottButton:hover {
+    background-color: #3ABFF8
+}
+
+input, textarea, ::placeholder{
+    background-color: #32323290;
+    color: #828DF8;
+}
+
+input:hover, textarea:hover{
+    box-shadow: 0px 0px 5px 2px #828DF8;
+}
+

@@ -5,40 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="createboycott.css" rel="stylesheet" type="text/css" />
+    
     <title>Create Boycott</title>
 </head>
 
 <body>
-    <div class="container">
+    <!-- created a form  -->
+    
         <form>
-            <!-- <div class="topContainer">
-                <div class="AlignLogo">
-                    <img src="alignLogo.png" alt="Align Logo" width="100px">
-                </div>
-            </div> -->
+
             <h3>Boycott Creation Form</h3>
             <div class="boycottdetails">
                 
+                <div class="authorName">
                 <p>Author's Name:</p>
-                <input type="text" name="fname" placeholder="First Name"/>
-                <input type="text" name="lname" placeholder="Last Name"/>
-                
+                <input type="text" id="fname" name="fname" placeholder="First Name"/>
+                <input type="text" id="lname" name="lname" placeholder="Last Name"/>
+                </div>
+                <br/>
 
+                <div class="boycottName">
                 <p>Boycott name:</p>
                 <input type="text" id="boycottName" placeholder="Name of boycott" required/>
-
+                </div>
+                
+                <div class="companyName">
                 <p>Company Name:</p>
-                <input type="text" id="boycottName" placeholder="What company are you boycotting?" required/>
+                <input type="text" id="companyName" placeholder="What company are you boycotting?" required/>
+                </div>
 
                 <p>Description:</p>
                 
-                <textarea id="description" rows="10" placeholder="Reason of boycotting the company"></textarea> 
+                <textarea id="description" rows="25" placeholder="Reason for boycotting the company"></textarea> 
             
-                <div class="button">
-                    <button type="submit">Create Boycott</button>
+                <div class="buttonArea">
+                    <button class="createBoycottButton">Create Boycott</button>
                 </div>
             </div>
         </form>
-    </div>
+    
 </body>
 </html>
