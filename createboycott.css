@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.container{  
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+    background-color: silver;
+  }
+
+/* .header{
+    background-image: linear-gradient(to right, #3ABFF8, #828DF8 );
+    height: 200px;
+} */
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+}
+
+body {
+    background-color:rgb(16, 16, 61)
+    
+}
+
+.boycottDescription{
+    height: 100px;
+}
+
+input, textarea{
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+button {
+    width: auto;
+    background-color: lightblue;
+    cursor: pointer;
+    align-self: center;
+}
