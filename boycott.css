@@ -69,6 +69,7 @@ body {
     width: 600px;
     border-radius: 25px;
   }
+
    
   #main {
     background-color: #0F1729;
@@ -95,13 +96,16 @@ body {
     font-size: 40px;
   }
 
+
    #nav {
-    padding: 5px 10px;
+    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     position: relative;
-    left: 1150px;
+    left: 1100px;
+    top: -65px;
+    
 }
 
 .navigation a {
