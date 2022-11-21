@@ -1,298 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Head section with important links -->
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <title>Home page</title>
-    <style>
-        :root {
-            --primary: #3ABFF8;
-
-            --secondary: #828DF8;
-
-            --accent: #F471B5;
-
-            --neutral: #1D283A;
-
-            --base-100: #0F1729;
-
-            --info: #0CA6E9;
-
-            --success: #2BD4BD;
-
-            --warning: #F4C152;
-
-            --error: #FB6F84;
-
-        }
-
-        html {
-
-            font-family: Calibri, sans-serif;
-        }
-
-        .wrapper {
-            background-color: gray;
-            width: 100%;
-            min-height: 600px;
-            height: 100vh;
-        }
-
-        .title {
-            text-align: center;
-            padding: 30px 0;
-            font-size: 60px;
-            font-weight: 300;
-            color:var(--base-100);
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .nav {
-            margin: 20px auto;
-            width: 400px;
-            height: 40px;
-            padding: 0 20px;
-            background-color: var(--secondary);
-        }
-
-        .nav>li {
-            padding: 10px 0px;
-            margin: 0 25px;
-            float: left;
-        }
-
-        .nav>li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .nav .menu {
-            position: relative;
-        }
-
-        .nav .menu:hover .submenu {
-            visibility: visible;
-        }
-
-        .nav .menu .submenu {
-            width: 220px;
-            background-color: #fff;
-            position: absolute;
-            top: 40px;
-            left: 15px;
-            box-shadow: 0 5px 10px var(--base-100);
-            visibility: hidden;
-        }
-
-        .nav .menu .submenu li {
-            padding: 10px;
-        }
-
-        .nav .menu .submenu li a {
-            color: var(--neutral);
-        }
-
-        .nav .menu .submenu li:hover {
-            background-color: var(--secondary);
-        }
-
-        .nav .menu .submenu li:hover a {
-            color: #fff;
-        }
-
-        .nav .menu .submenu::after {
-            content: "";
-            position: absolute;
-            border: 6px solid;
-            border-color: transparent transparent #fff transparent;
-            top: -12px;
-            left: 6px;
-        }
-
-        img {
-            width: 400px;
-            height: 300px;
-
-
-        }
-
-
-
-        .image-left {
-            margin: 1em 0;
-        }
-
-        @media (min-width: 20em) {
-            .image-left {
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        .image-left img {
-            margin-right: 1em;
-            float: left;
-
-        }
-
-        .image-left::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-
-        @media (min-width: 30em) {
-
-            .image-left img {
-                flex-shrink: 0;
-            }
-        }
-
-        .o {
-            width: 80%;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        h3 {
-            text-align: center;
-        }
-
-        .column {
-            float: left;
-            width: 30%;
-            padding: 1px;
-            height: 100px;
-
-        }
-
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .p {
-            margin-left: 30%;
-        }
-
-        .footer {
-            height: 200px;
-            width: 100%;
-            background-color: var(--base-100);
-        }
-
-        button {
-            padding: 20px 60px;
-            background-color: var(--secondary);
-            border: 1px solid var(--neutral);
-            outline: none;
-            transition: 0.5s;
-            box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
-
-        }
-
-        button:hover {
-            background: transparent;
-            color: var(--base-100);
-        }
-        .signup{
-            float: right;
-            margin-right: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/homepage.css" />
+<!-- Icon links for project -->
+  <script src="https://kit.fontawesome.com/77d09135e8.js" crossorigin="anonymous"></script>
+  <title>Home page</title>
+  
 </head>
-
+<!-- Body section start here -->
 <body>
-    <!-- --------Header section------------- -->
-    <div class="title">
-        Align
-        <div class="line"></div>
+  <!-- --------Header section------------- -->
+  <div class="title">
+    Align
+    <div class="line"></div>
+  </div>
+  <!-- -------Logo section-------------------->
+  <span class="logo"><img src="./images/alignLogo.png" /></span>
+
+  <!-- ----------Login------------------------>
+  <span class="signup">LOGIN</span>
+  <span class="signup"><a href="signinpage.html">SIGN UP &nbsp;</a></span>
+
+  <!-- ------------Navigation-------------- -->
+  <ul class="nav">
+    <!-- Different pages linked here -->
+    <li><a href="/">Home</a></li>
+    <li><a href="/boycott.html">Boycott View</a></li>
+    <li><a href="/craeteboycott">Create Boycotts</a></li>
+    <li><a>Contact us</a></li>
+  </ul>
+
+  <hr />
+  <!-- ----------Image for content---------------------------- -->
+  <div class="image-left">
+    <img
+      src="https://images.unsplash.com/photo-1592524138886-f4e3170d5ea7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=471&q=80"
+      alt="Human Rights Logo" alt="Human Rights Logo" />
+      <!-- Introduction section  -->
+    <div class="div">
+      <p>
+        Align is a web application that allows users around the world to share and receive information regarding
+        movements to boycott products and services. A tool to align your purchasing power with your moral beliefs. Align
+        ensures your money in no way supports organizations or companies that contribute to causes that are antithetical
+        to your beliefs. Align will notify you of products to avoid before adding to your shopping cart when online
+        shopping. An Align user can browse our selection of curated boycotts put together by organizers of social
+        movements, activists or political organizations and create their own boycotts to share with other users. The
+        Align application works as a web overlay which is used to provide contextual information on browsed products
+        while online shopping. This first iteration of the project will let a user create a profile, view boycotts, opt
+        in to boycotts and create their own to share
+      </p>
     </div>
-    <!-- -------Logo section-------------------->
-    <span>LOGO</span>
+  </div>
+  <br />
+  <hr class="o" />
 
-    <!-- ----------Login------------------------>
-    <span class="signup">LOGIN </span>
-    <span class="signup">SIGN UP</span>
+  <h2>BOYCOTT EVENTS</h2>
+  <h3><button>Boycott Details</button></h3>
 
-    <!-- ------------Navigation-------------- -->
-    <ul class="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Contact</a></li>
-        
-    </ul>
+  <br />
+
+  <!-- ------------Footer section social media--------------- -->
+  <div class="footer">
+    <div class="social-menu">
+      <div class="jumbotron sticky-top">
+        <div class="container">
+          <div class="share">
+            <h5>Share</h5>
+          </div>
+          <div class="row justify-content-center text-center">
+            <div class="d-none d-lg-block col-xlg-4 pt-1">
+              <ul>
+                <li>
+                  <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="# " target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="# " target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- firebasejs Section-->
+<script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+  
+  
+  const firebaseConfig = {
+      apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
+      authDomain: "align-d4038.firebaseapp.com",
+      projectId: "align-d4038",
+      storageBucket: "align-d4038.appspot.com",
+      messagingSenderId: "540706810436",
+      appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
+      measurementId: "G-NS4V9CKKD3",
+    };
     
-    <hr>
-    <!-- ----------Image for content---------------------------- -->
-    <div class="image-left">
-        <img src="https://images.unsplash.com/photo-1592524138886-f4e3170d5ea7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=471&q=80"
-            alt="Human Rights Logo" alt="Human Rights Logo" />
-        <div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut repudiandae pariatur impedit ipsa
-                voluptatibus, tempore optio? Saepe vero omnis fuga consequatur repellendus harum, iste suscipit
-                aspernatur esse ea id?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum asperiores,
-                culpa nisi labore accusamus laboriosam alias in similique nam neque quibusdam debitis numquam quae ut
-                voluptatem quisquam quasi vero doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus autem porro debitis cumque eum ab libero odio ea repellat explicabo! Ratione nemo
-                perspiciatis odit? Porro nisi doloremque corporis distinctio commodi. Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Obcaecati aut repudiandae pariatur impedit ipsa
-                voluptatibus, tempore optio? Saepe vero omnis fuga consequatur repellendus harum, iste suscipit
-                aspernatur esse ea id?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum asperiores,
-                culpa nisi labore accusamus laboriosam alias in similique nam neque quibusdam debitis numquam quae ut
-                voluptatem quisquam quasi vero doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus autem porro debitis cumque eum ab libero odio ea repellat explicabo! Ratione nemo
-                perspiciatis odit? Porro nisi doloremque corporis distinctio commodi.</p>
-
-        </div>
-    </div>
-    <br>
-    <hr class="o">
-
-    <h2>BOYCOTT EVENTS</h2>
-    <h3><button>Boycott Details</button></h3>
-
-    <!-- --------------Social media section----------------------- -->
-    <div class="p">
-        <div class="row">
-            <div class="column">
-                <h2>Share</h2>
-
-            </div>
-            <div class="column">
-
-                <p style="margin-left:-30px ;">
-                <ul>
-                    <li>FaceBook &nbsp;<a href="#" class="fa fa-facebook"></a></li>
-                    <li>Instagram &nbsp;<a href="#" class="fa fa-instagram"></a></li>
-                    <li>Twitter &nbsp; &nbsp; &nbsp;<a href="#" class="fa fa-twitter"></a></li>
-                </ul>
-                </p>
-            </div>
-        </div>
-
-
-    </div>
-
-    <br>
-
-    <!-- ------------Footer section--------------- -->
-    <div class="footer"></div>
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+</script>
 
 </body>
 
