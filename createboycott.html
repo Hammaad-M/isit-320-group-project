@@ -9,37 +9,46 @@
 </head>
 
 <body>
-    <div class="container">
-        <div>
-            <!-- <div class="topContainer">
-                <div class="AlignLogo">
-                    <img src="alignLogo.png" alt="Align Logo" width="100px">
-                </div>
-            </div> -->
+    <!-- created a form  -->
+    
+        <form>
+            <img src="alignLogo.png">
+            <a href="#">Go Back</a>
             <h3>Boycott Creation Form</h3>
+            
             <div class="boycottdetails">
-                
+                <!-- Asks for the author's name who's creating the boycott -->
+                <div class="authorName">
                 <p>Author's Name:</p>
-                <input type="text" name="fname" id="first-name" placeholder="First Name"/>
-                <input type="text" name="lname" id="last-name" placeholder="Last Name"/>
+                <input type="text" id="fname" name="fname" placeholder="First Name"/>
+                <input type="text" id="lname" name="lname" placeholder="Last Name"/>
+                </div>
+                <br/>
                 
-
+                <!-- Asks for what the author wants to name the boycott -->
+                <div class="boycottName">
                 <p>Boycott name:</p>
-                <input type="text" id="boycott-name" placeholder="Name of boycott" />
+                <input type="text" id="boycottName" placeholder="Name of boycott" required/>
+                </div>
 
+                <!-- Asks for the company that the author is boycotting -->
+                <div class="companyName">
                 <p>Company Name:</p>
-                <input type="text" id="boycott-company" placeholder="What company are you boycotting?" />
+                <input type="text" id="companyName" placeholder="What company are you boycotting?" required/>
+                </div>
 
+                <!-- Author can fill in details about their boycott in this box -->
                 <p>Description:</p>
                 
-                <textarea id="description" rows="10" placeholder="Reason of boycotting the company"></textarea> 
+                <textarea id="description" rows="25" placeholder="Reason for boycotting the company"></textarea> 
             
-                <div class="button">
-                    <button type="submit" id="create-bct-btn">Create Boycott</button>
+                <div class="buttonArea">
+                    <button class="createBoycottButton">Create Boycott</button>
                 </div>
             </div>
-        </div>
-    </div>
+        </form>
+    
+
     <script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
         import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
         
