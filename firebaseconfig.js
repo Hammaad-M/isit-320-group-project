@@ -7,7 +7,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
   authDomain: "align-d4038.firebaseapp.com",

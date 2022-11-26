@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section with important links -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/homepage.css" />
+<!-- Icon links for project -->
+  <script src="https://kit.fontawesome.com/77d09135e8.js" crossorigin="anonymous"></script>
+  <title>Home page</title>
+  
+</head>
+<!-- Body section start here -->
+<body>
+  <!-- --------Header section------------- -->
+  <div class="title">
+    Align
+    <div class="line"></div>
+  </div>
+  <!-- -------Logo section-------------------->
+  <span class="logo"><img src="./images/alignLogo.png" /></span>
+
+  <!-- ----------Login------------------------>
+  <span class="signup">LOGIN</span>
+  <span class="signup"><a href="signinpage.html">SIGN UP &nbsp;</a></span>
+
+  <!-- ------------Navigation-------------- -->
+  <ul class="nav">
+    <!-- Different pages linked here -->
+    <li><a href="/">Home</a></li>
+    <li><a href="/boycott.html">Boycott View</a></li>
+    <li><a href="/craeteboycott">Create Boycotts</a></li>
+    <li><a>Contact us</a></li>
+  </ul>
+
+  <hr />
+  <!-- ----------Image for content---------------------------- -->
+  <div class="image-left">
+    <img
+      src="https://images.unsplash.com/photo-1592524138886-f4e3170d5ea7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=471&q=80"
+      alt="Human Rights Logo" alt="Human Rights Logo" />
+      <!-- Introduction section  -->
+    <div class="div">
+      <p>
+        Align is a web application that allows users around the world to share and receive information regarding
+        movements to boycott products and services. A tool to align your purchasing power with your moral beliefs. Align
+        ensures your money in no way supports organizations or companies that contribute to causes that are antithetical
+        to your beliefs. Align will notify you of products to avoid before adding to your shopping cart when online
+        shopping. An Align user can browse our selection of curated boycotts put together by organizers of social
+        movements, activists or political organizations and create their own boycotts to share with other users. The
+        Align application works as a web overlay which is used to provide contextual information on browsed products
+        while online shopping. This first iteration of the project will let a user create a profile, view boycotts, opt
+        in to boycotts and create their own to share
+      </p>
+    </div>
+  </div>
+  <br />
+  <hr class="o" />
+
+  <h2>BOYCOTT EVENTS</h2>
+  <h3><button>Boycott Details</button></h3>
+
+  <br />
+
+  <!-- ------------Footer section social media--------------- -->
+  <div class="footer">
+    <div class="social-menu">
+      <div class="jumbotron sticky-top">
+        <div class="container">
+          <div class="share">
+            <h5>Share</h5>
+          </div>
+          <div class="row justify-content-center text-center">
+            <div class="d-none d-lg-block col-xlg-4 pt-1">
+              <ul>
+                <li>
+                  <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="# " target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="# " target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- firebasejs Section-->
+<script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+  
+  
+  const firebaseConfig = {
+      apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
+      authDomain: "align-d4038.firebaseapp.com",
+      projectId: "align-d4038",
+      storageBucket: "align-d4038.appspot.com",
+      messagingSenderId: "540706810436",
+      appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
+      measurementId: "G-NS4V9CKKD3",
+    };
+    
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+</script>
+
+</body>
+
+</html>

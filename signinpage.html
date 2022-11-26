@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Sign In</title>
+    <link href="boycotts.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <nav class="md:section-padding md:py-4 pb-4">
+      <div class="si-header">
+        <div class="navbar">
+          <div class="navbar-start">
+            <!-- <label tabindex="0" class="btn btn-ghost btn-circle avatar"><div class="w-20 rounded-full">
+          
+          -->
+
+            <img src="alignLogo.png" alt="Align Logo" width="100px" /><!--
+        </div>
+          
+        </label>-->
+          </div>
+          <div class="navbar-center">
+            <div class="normal-case text-xl" id="informedbuying">
+              INFORMED BUYING
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div id="rscontainer">
+              <button class="btn gap-2 md:gap-4 btn-primary" id="reg-btn">
+                register
+              </button>
+
+              <button class="btn gap-2 md:gap-4 btn-primary" id="si-btn">
+                sign in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- </div>-->
+    </nav>
+    <div class="md:section-padding md:py-4 pb-4" id="dashboard">
+      <div
+        class="card w-full bg-base-300 shadow-xl transition ease-in duration-200 hover:shadow-2xl hover:lg:scale-[105%] hover:shadow-secondary"
+      >
+        <div id="si-left">
+          <div id="si-left-title">
+            <p>Align Your Purchasing Power</p>
+          </div>
+          <div id="si-left-subtitle">
+            <p>spend your money where it matters</p>
+            <p></p>
+          </div>
+
+          <div id="si-share">
+            <h2>Share With Your Friends and Colleagues</h2>
+            <button class="btn gap-2 md:gap-4 btn-primary" id="shareBtn">
+              Share
+            </button>
+
+            <script>
+              document
+                .querySelector("#shareBtn")
+                .addEventListener("click", (event) => {
+                  // Fallback, Tries to use API only
+                  // if navigator.share function is
+                  // available
+                  if (navigator.share) {
+                    navigator
+                      .share({
+                        // Title that occurs over
+                        // web share dialog
+                        title: "Align",
+
+                        // URL to share
+                        url: "https://Align.com",
+                      })
+                      .then(() => {
+                        console.log("Thanks for sharing!");
+                      })
+                      .catch((err) => {
+                        // Handle errors, if occured
+                        console.log("Error while using Web share API:");
+                        console.log(err);
+                      });
+                  } else {
+                    // Alerts user if API not available
+                    alert("Browser doesn't support this API !");
+                  }
+                });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-xl transition ease-in duration-200 hover:shadow-2xl hover:lg:scale-[105%] hover:shadow-secondary"
+      >
+        <div id="si-right">
+          <div id="money-fist">
+            <img src="moneyFist.jpg" alt="Align Logo" width="400px" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:section-padding md:py-4 pb-4">
+      <div class="si-footer">
+        <div id="aboutus"><h2 class="card-title pb-2">About Us</h2></div>
+        <div id="contact">
+          <h2 class="card-title pb-2">Contact Us</h2>
+          <a href="mailto: abc@example.com">Email</a>
+          <br />
+          <br />
+          <a href="tel:+8675309">Call Us</a>
+        </div>
+        <div>
+          <h2 class="card-title pb-2">Donate to Align</h2>
+          <form
+            action="https://www.paypal.com/donate"
+            method="post"
+            target="_top"
+          >
+            <!-- Identify your business so that you can collect the payments. -->
+            <input
+              type="hidden"
+              name="business"
+              value="donations@isit320align.com"
+            />
+            <!-- Specify details about the contribution -->
+            <input type="hidden" name="no_recurring" value="0" />
+            <input type="hidden" name="item_name" value="Friends of the Park" />
+            <input
+              type="hidden"
+              name="item_number"
+              value="Fall Cleanup Campaign"
+            />
+            <input type="hidden" name="currency_code" value="USD" />
+            <!-- Display the payment button. -->
+            <input
+              type="image"
+              name="submit"
+              src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+              alt="Donate"
+            />
+            <img
+              alt=""
+              width="1"
+              height="1"
+              src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./firebaseconfig.js"></script>
+    <script type="module" src="./signin.js"></script>
+  </body>
+</html>
