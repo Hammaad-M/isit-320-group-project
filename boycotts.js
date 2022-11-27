@@ -6,15 +6,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { app } from "./firebaseconfig.js";
 
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
 const months = [
   "January",
   "February",
@@ -41,7 +32,7 @@ function createBoycottCard({
   title,
   desc,
   companyName,
-  author,
+  authorName,
   authorPicture,
   tags,
 }) {
@@ -60,7 +51,7 @@ function createBoycottCard({
               <div class="avatar bg-secondary text-neutral-content rounded-full w-8">
                 <img class="rounded-full" src="${authorPicture}" />
               </div>
-              <span class="text-secondary">${author}</span>
+              <span class="text-secondary">${authorName}</span>
             </div>
             <p>${desc}</p>
             <div class="card-actions justify-end mt-2">
