@@ -1,3 +1,4 @@
+// import relevant modules from firebase cdn and local config
 import {
   getFirestore,
   collection,
@@ -21,12 +22,16 @@ const months = [
   "December",
 ];
 
+// formats date object
+// @param Date
+// @returns string (Month Day Year)
 const format = (date) => {
   // const date = new Timestamp(seconds);
   console.log(date);
   return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
 };
 
+// creates boycott element using boycott object from database
 function createBoycottCard({
   date,
   title,
@@ -38,6 +43,7 @@ function createBoycottCard({
 }) {
   // console.log(date);
   const dateString = format(date.toDate());
+  // jQuery script to write html cleanly
   $(".card-container").append(
     `<article
           class="card w-full bg-base-300 shadow-xl transition ease-in duration-200 hover:shadow-2xl hover:lg:scale-[105%] hover:shadow-secondary"
@@ -65,6 +71,7 @@ function createBoycottCard({
   );
 }
 
+// fetches boycotts from the 'boycotts' collection in the firestore database
 async function fetchData() {
   console.log("fetching data");
   const db = getFirestore(app);
@@ -72,7 +79,6 @@ async function fetchData() {
   const q = query(boycottsRef);
   const boycotts = await getDocs(q);
 
-  boycotts.forEach((b) => console.log(b.data()));
   boycotts.forEach((b) => createBoycottCard(b.data()));
 }
 
