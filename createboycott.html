@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-   <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="createboycott.css" rel="stylesheet" type="text/css" />
     <title>Create Boycott</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- created a form  -->
+<<<<<<< HEAD
     <!-- <form> -->
         <form>
             <img src="alignLogo.png">
@@ -30,119 +31,188 @@
                 <p>Boycott name:</p>
                 <input type="text" id="boycottName" placeholder="Name of boycott" required/>
                 </div>
+=======
+>>>>>>> 632429d13d2207af2ece5ce9ed5ba39c1c50e053
 
-                <!-- Asks for the company that the author is boycotting -->
-                <div class="companyName">
-                <p>Company Name:</p>
-                <input type="text" id="companyName" placeholder="What company are you boycotting?" required/>
-                </div>
+    <form>
+      <img src="alignLogo.png" />
+      <a href="homepage.html">Go Back</a>
+      <h3>Boycott Creation Form</h3>
 
-                <!-- Author can fill in details about their boycott in this box -->
-                <p>Description:</p>
-                
-                <textarea id="description" rows="25" placeholder="Reason for boycotting the company"></textarea> 
-            
-                <div class="buttonArea">
-                    <button class="createBoycottButton">Create Boycott</button>
-                </div>
-            </div>
-        </form>
-    
+      <div class="boycottdetails">
+        <!-- Asks for what the author wants to name the boycott -->
+        <div class="boycottName">
+          <p>Boycott Name:</p>
+          <input type="text" id="title" placeholder="Name of boycott" />
+        </div>
 
-    <script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-        import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-        
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
-            authDomain: "align-d4038.firebaseapp.com",
-            projectId: "align-d4038",
-            storageBucket: "align-d4038.appspot.com",
-            messagingSenderId: "540706810436",
-            appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
-            measurementId: "G-NS4V9CKKD3",
-          };
-          
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+        <!-- Asks for the company that the author is boycotting -->
+        <div class="companyName">
+          <p>Company Name:</p>
+          <input
+            type="text"
+            id="company"
+            placeholder="What company are you boycotting?"
+          />
+        </div>
 
+        <!-- Author can fill in details about their boycott in this box -->
+        <p>Description:</p>
 
-        //add event listener to submit button
-        document.querySelector('#create-bct-btn').addEventListener('click', ()=>{
+        <textarea
+          id="desc"
+          placeholder="Reason for boycotting the company"
+        ></textarea>
+        <!-- Author can fill in details about their boycott tags in this box -->
+        <p>Keywords (comma seperated):</p>
 
-            //variables to fetch values for boycott
-            var company = document.getElementById("boycott-company").value;
-            var name = document.getElementById("boycott-name").value;
-            var fname = document.getElementById("first-name").value;
-            var lname = document.getElementById("last-name").value;
-            var bInfo = document.getElementById("description").value;
+        <textarea
+          id="tags"
+          placeholder="Relevant keywords for your boycott"
+        ></textarea>
 
+        <div class="buttonArea">
+          <button type="submit" class="createBoycottButton">
+            Create Boycott
+          </button>
+        </div>
+      </div>
+    </form>
 
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        addDoc,
+        getDoc,
+        updateDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
+      const firebaseConfig = {
+        apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
+        authDomain: "align-d4038.firebaseapp.com",
+        projectId: "align-d4038",
+        storageBucket: "align-d4038.appspot.com",
+        messagingSenderId: "540706810436",
+        appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
+        measurementId: "G-NS4V9CKKD3",
+      };
 
-           //using addDoc function to send JSON data to boycottTest collection
-           addDoc(collection(db, "boycottTest"), {
-            firstName: fname,
-            lastName: lname,
-            bctSummary: bInfo, 
-            bctCompany: company,
-            bctName: name
-            })
-            
-            .then(docRef => {
-                console.log("Document has been added successfully");
-            })
-                .catch(error => {
-                     console.log(error);
-                });
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
 
-           
-             console.log("button is working");  
- 
-           
-           });
-           
-//-----------------CODE TO BE USED WHEN WE HAVE LIST, EDIT AND DELETE PAGE   -------------------------------------------------------------------------
+      //add event listener to submit button
+      const form = document.querySelector("form");
 
-        //READING
-        document.querySelector('#buttonlistingboycott').addEventListener('click', ()=>{      
-        //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set variables       
-        getDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"), {
+      const getUserData = async () => {
+        try {
+          const res = await getDoc(doc(db, "users", "roy6M81BV1JVxaOu7GcW"));
+          const data = res.data();
+          return [data.name, data.picture];
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      getUserData();
 
-        })
-        
-        .then(docRef => {
-            console.log("Document has been added successfully");
-        })
-            .catch(error => {
-                 console.log(error);
-            });       
-       });
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        //letiables to fetch values for boycott
+        const fields = ["company", "tags", "desc", "title"];
+        let [company, tags, desc, title] = fields.map(
+          (field) => document.getElementById(field).value
+        );
 
-           
-        //UPDATING
-           document.querySelector('#buttonforediting').addEventListener('click', ()=>{      
-        //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set variables       
-        updateDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"), {
-        firstName: fname,
-        lastName: lname,
-        bctSummary: bInfo, 
-        bctCompany: company,
-        bctName: name
-        })
-        
-        .then(docRef => {
-            console.log("Document has been added successfully");
-        })
-            .catch(error => {
-                 console.log(error);
-            });       
-       });
+        tags = tags.split(",");
+        for (let i = 1; i < tags.length; i++) {
+          if (tags[i].substr(0, 1) === " ") {
+            tags[i] = tags[i].substr(1);
+          }
+        }
 
-       //DELETING
-       document.querySelector('#buttonfordeleting').addEventListener('click', ()=>{ 
-       deleteDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"));
-    });    
+        const [authorName, authorPicture] = await getUserData();
+        try {
+          //using addDoc function to send JSON data to boycottTest collection
+          await addDoc(collection(db, "boycotts"), {
+            authorName,
+            authorPicture,
+            companyName: company,
+            desc,
+            title,
+            date: new Date(),
+          });
+
+          console.log("Document has been added successfully");
+        } catch (err) {
+          console.error(err);
+        }
+      });
+
+      //-----------------CODE TO BE USED WHEN WE HAVE LIST, EDIT AND DELETE PAGE   -------------------------------------------------------------------------
+
+      //   //READING
+      //   document
+      //     .querySelector("#buttonlistingboycott")
+      //     .addEventListener("click", () => {
+      //       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
+      //       getDoc(
+      //         collection(
+      //           db,
+      //           "boycottTest",
+      //           "input boycott id here fetched from listed boycott"
+      //         ),
+      //         {}
+      //       )
+      //         .then((docRef) => {
+      //           console.log("Document has been added successfully");
+      //         })
+      //         .catch((error) => {
+      //           console.log(error);
+      //         });
+      //     });
+
+      //   //UPDATING
+      //   document
+      //     .querySelector("#buttonforediting")
+      //     .addEventListener("click", () => {
+      //       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
+      //       updateDoc(
+      //         collection(
+      //           db,
+      //           "boycottTest",
+      //           "input boycott id here fetched from listed boycott"
+      //         ),
+      //         {
+      //           firstName: fname,
+      //           lastName: lname,
+      //           bctSummary: bInfo,
+      //           bctCompany: company,
+      //           bctName: name,
+      //         }
+      //       )
+      //         .then((docRef) => {
+      //           console.log("Document has been added successfully");
+      //         })
+      //         .catch((error) => {
+      //           console.log(error);
+      //         });
+      //     });
+
+      //   //DELETING
+      //   document
+      //     .querySelector("#buttonfordeleting")
+      //     .addEventListener("click", () => {
+      //       deleteDoc(
+      //         collection(
+      //           db,
+      //           "boycottTest",
+      //           "input boycott id here fetched from listed boycott"
+      //         )
+      //       );
+      //     });
     </script>
-</body>
+  </body>
 </html>
