@@ -13,8 +13,9 @@
 
     <form>
       <img src="alignLogo.png" />
-      <a href="homepage.html">Go Back</a>
-      <h3>Boycott Creation Form</h3>
+      <button class="goBackButton"><a href="homepage.html">Go Back</a></button>
+
+      <h2>Boycott Creation Form</h2>
 
       <div class="boycottdetails">
         <!-- Asks for what the author wants to name the boycott -->
@@ -29,7 +30,7 @@
           <input
             type="text"
             id="company"
-            placeholder="What company are you boycotting?"
+            placeholder="Company you're boycotting"
           />
         </div>
 
@@ -47,7 +48,7 @@
           id="tags"
           placeholder="Relevant keywords for your boycott"
         ></textarea>
-
+        <!-- Author clicks button to create their boycott -->
         <div class="buttonArea">
           <button type="submit" class="createBoycottButton">
             Create Boycott
