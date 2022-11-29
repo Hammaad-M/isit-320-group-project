@@ -1,94 +1,129 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-        import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-        
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
-            authDomain: "align-d4038.firebaseapp.com",
-            projectId: "align-d4038",
-            storageBucket: "align-d4038.appspot.com",
-            messagingSenderId: "540706810436",
-            appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
-            measurementId: "G-NS4V9CKKD3",
-          };
-          
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+import {
+  getFirestore,
+  collection,
+  doc,
+  addDoc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  deleteDoc,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { app } from "./firebaseconfig.js";
 
+const db = getFirestore(app);
 
-        //add event listener to submit button
-        document.querySelector('#create-bct-btn').addEventListener('click', ()=>{
+//add event listener to submit button
+const form = document.querySelector("form");
 
-            //variables to fetch values for boycott
-            var company = document.getElementById("boycott-company").value;
-            var name = document.getElementById("boycott-name").value;
-            var fname = document.getElementById("first-name").value;
-            var lname = document.getElementById("last-name").value;
-            var bInfo = document.getElementById("description").value;
+const getUserData = async () => {
+  try {
+    const res = await getDoc(doc(db, "users", "roy6M81BV1JVxaOu7GcW"));
+    const data = res.data();
+    return [data.name, data.picture];
+  } catch (err) {
+    console.error(err);
+  }
+};
+getUserData();
 
+const getUniqueID = () => {
+  return `${Date.now()}`;
+};
 
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  //letiables to fetch values for boycott
+  const fields = ["company", "tags", "desc", "title"];
+  let [company, tags, desc, title] = fields.map(
+    (field) => document.getElementById(field).value
+  );
 
+  tags = tags.split(",");
+  for (let i = 1; i < tags.length; i++) {
+    if (tags[i].substr(0, 1) === " ") {
+      tags[i] = tags[i].substr(1);
+    }
+  }
 
-           //using addDoc function to send JSON data to boycottTest collection
-           addDoc(collection(db, "boycottTest"), {
-            firstName: fname,
-            lastName: lname,
-            bctSummary: bInfo, 
-            bctCompany: company,
-            bctName: name
-            })
-            
-            .then(docRef => {
-                console.log("Document has been added successfully");
-            })
-                .catch(error => {
-                     console.log(error);
-                });
+  const [authorName, authorPicture] = await getUserData();
+  const id = getUniqueID();
+  try {
+    //using addDoc function to send JSON data to boycottTest collection
+    await setDoc(doc(db, "boycotts", id), {
+      authorName,
+      authorPicture,
+      companyName: company,
+      desc,
+      title,
+      date: new Date(),
+      id,
+    });
 
-           
-             alert("button is working");  
- 
-           
-           });
-           
+    console.log("Document has been added successfully");
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 //-----------------CODE TO BE USED WHEN WE HAVE LIST, EDIT AND DELETE PAGE   -------------------------------------------------------------------------
 
-        //READING
-        document.querySelector('#buttonlistingboycott').addEventListener('click', ()=>{      
-        //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set variables       
-        getDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"), {
+//   //READING
+//   document
+//     .querySelector("#buttonlistingboycott")
+//     .addEventListener("click", () => {
+//       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
+//       getDoc(
+//         collection(
+//           db,
+//           "boycottTest",
+//           "input boycott id here fetched from listed boycott"
+//         ),
+//         {}
+//       )
+//         .then((docRef) => {
+//           console.log("Document has been added successfully");
+//         })
+//         .catch((error) => {
+//           console.log(error);
+//         });
+//     });
 
-        })
-        
-        .then(docRef => {
-            console.log("Document has been added successfully");
-        })
-            .catch(error => {
-                 console.log(error);
-            });       
-       });
+//   //UPDATING
+//   document
+//     .querySelector("#buttonforediting")
+//     .addEventListener("click", () => {
+//       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
+//       updateDoc(
+//         collection(
+//           db,
+//           "boycottTest",
+//           "input boycott id here fetched from listed boycott"
+//         ),
+//         {
+//           firstName: fname,
+//           lastName: lname,
+//           bctSummary: bInfo,
+//           bctCompany: company,
+//           bctName: name,
+//         }
+//       )
+//         .then((docRef) => {
+//           console.log("Document has been added successfully");
+//         })
+//         .catch((error) => {
+//           console.log(error);
+//         });
+//     });
 
-           
-        //UPDATING
-           document.querySelector('#buttonforediting').addEventListener('click', ()=>{      
-        //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set variables       
-        updateDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"), {
-        firstName: fname,
-        lastName: lname,
-        bctSummary: bInfo, 
-        bctCompany: company,
-        bctName: name
-        })
-        
-        .then(docRef => {
-            console.log("Document has been added successfully");
-        })
-            .catch(error => {
-                 console.log(error);
-            });       
-       });
-
-       //DELETING
-       document.querySelector('#buttonfordeleting').addEventListener('click', ()=>{ 
-       deleteDoc(collection(db, "boycottTest", "input boycott id here fetched from listed boycott"));
-    });
+//   //DELETING
+//   document
+//     .querySelector("#buttonfordeleting")
+//     .addEventListener("click", () => {
+//       deleteDoc(
+//         collection(
+//           db,
+//           "boycottTest",
+//           "input boycott id here fetched from listed boycott"
+//         )
+//       );
+//     });
