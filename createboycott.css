@@ -6,6 +6,7 @@
 /* All hovers will have the following  */
 *:hover {
   transition: .75s;
+  color: #828DF8
 }
 
 /* Changes outer layer color */
@@ -51,10 +52,6 @@ img {
   display: inline-block;
   padding: 0px 20px;
   
-}
-
-.navLinks a:hover{
-  color: #828DF8
 }
 
 button {
