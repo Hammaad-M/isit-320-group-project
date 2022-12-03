@@ -9,9 +9,288 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/homepage.css" />
+
 <!-- Icon links for project -->
   <script src="https://kit.fontawesome.com/77d09135e8.js" crossorigin="anonymous"></script>
   <title>Home page</title>
+ 
+  <style>
+    :root {
+  --primary: #3abff8;
+
+  --secondary: #828df8;
+
+  --accent: #f471b5;
+
+  --neutral: #1d283a;
+
+  --base-100: #0f1729;
+
+  --info: #0ca6e9;
+
+  --success: #2bd4bd;
+
+  --warning: #f4c152;
+
+  --error: #fb6f84;
+}
+
+html {
+  font-family: Calibri, sans-serif;
+}
+
+.wrapper {
+  background-color: gray;
+  width: 100%;
+  min-height: 600px;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 60px;
+  font-weight: 300;
+  color: var(--base-100);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav {
+  margin: 20px auto;
+  width: 580px;
+  height: 50px;
+  padding:  0 20px;
+  background-color: var(--secondary);
+  margin: 10px auto;
+}
+
+.nav > li {
+  padding: 10px 0px;
+  margin: 0 25px;
+  float: left;
+}
+
+.nav > li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav .menu {
+  position: relative;
+}
+
+.nav .menu:hover .submenu {
+  visibility: visible;
+}
+
+.nav .menu .submenu {
+  width: 220px;
+  background-color: #fff;
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  box-shadow: 0 5px 10px var(--base-100);
+  visibility: hidden;
+}
+
+.nav .menu .submenu li {
+  padding: 10px;
+}
+
+.nav .menu .submenu li a {
+  color: var(--neutral);
+}
+
+.nav .menu .submenu li:hover {
+  background-color: var(--secondary);
+}
+
+.nav .menu .submenu li:hover a {
+  color: #fff;
+}
+
+.nav .menu .submenu::after {
+  content: "";
+  position: absolute;
+  border: 6px solid;
+  border-color: transparent transparent #fff transparent;
+  top: -12px;
+  left: 6px;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+}
+
+.image-left {
+  margin: 1em 0;
+}
+
+@media (min-width: 20em) {
+  .image-left {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.image-left img {
+  /* margin-right: 1em; */
+  /* float: left; */
+  margin: 5px;
+}
+
+.image-left::after {
+  content: "";
+  display: block;
+  /* clear: both; */
+  
+}
+
+@media (max-width: 700px) {
+  .image-left img {
+ 
+   display: none;
+  }
+}
+
+.o {
+  width: 80%;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 1px;
+  height: 100px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.div p {
+  margin: 15px;
+}
+
+.footer {
+  height: 200px;
+  width: auto;
+  bottom: 0;
+ margin-bottom: 0;
+background-color: lightgrey;
+ 
+}
+
+button {
+  padding: 20px 60px;
+  background-color: var(--secondary);
+  border: 1px solid var(--neutral);
+  outline: none;
+  transition: 0.5s;
+  box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+}
+.logo{
+  margin: 20px;
+}
+button:hover {
+  background: transparent;
+  color: var(--base-100);
+}
+.signup {
+  float: right;
+  margin-right: 10px;
+}
+
+.social-menu ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.social-menu ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+.social-menu ul li .fab {
+  font-size: 30px;
+  line-height: 60px;
+  transition: 0.3s;
+  color: #000;
+}
+
+.social-menu ul li .fab:hover {
+  color: #fff;
+}
+
+.social-menu ul li a {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  transition: 0.6s;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.social-menu ul li a:hover {
+  transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover {
+  background-color: #25d366;
+}
+.social-menu ul li:nth-child(2) a:hover {
+  background-color: #0077b5;
+}
+
+.social-menu ul li:nth-child(3) a:hover {
+  background-color: #e4405f;
+}
+
+.social-menu ul li:nth-child(4) a:hover {
+  background-color: #3b5998;
+}
+.share h5{
+  font-size: 45px;
+  margin-left: 30px;
+}
+
+.jumbotron {
+   
+    margin-bottom: 0;
+    border-bottom: 0;
+ 
+    width: 100%;
+  }
+.logo img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+  </style>
   
 </head>
 <!-- Body section start here -->
@@ -26,14 +305,20 @@
 
   <!-- ----------Login------------------------>
   <span class="signup">LOGIN</span>
-  <span class="signup"><a href="signinpage.html">SIGN UP &nbsp;</a></span>
+
+  <!-- Signup page html files linked here -->
+  <span class="signup"><a href="/isit-320-group-project/blob/main/signinpage.html">SIGN UP &nbsp;</a></span>
 
   <!-- ------------Navigation-------------- -->
   <ul class="nav">
     <!-- Different pages linked here -->
     <li><a href="/">Home</a></li>
-    <li><a href="/boycott.html">Boycott View</a></li>
-    <li><a href="/craeteboycott">Create Boycotts</a></li>
+
+    <!-- BoycottView html files linked here -->
+    <li><a href="/isit-320-group-project/boycott.html">Boycott View</a></li>
+
+    <!-- CreateBoycott html files linked here -->
+    <li><a href="/isit-320-group-project/createboycott.html">Create Boycotts</a></li> 
     <li><a>Contact us</a></li>
   </ul>
 
