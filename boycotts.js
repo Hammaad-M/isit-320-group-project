@@ -7,6 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { app } from "./firebaseconfig.js";
 
+// array of month names
 const months = [
   "January",
   "February",
@@ -31,6 +32,11 @@ const format = (date) => {
   return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
 };
 
+function openBoycott(id) {
+  // opening boycott in current tab
+  window.open(`./boycott.html?id=${id}`);
+}
+
 // creates boycott element using boycott object from database
 function createBoycottCard({
   date,
@@ -40,12 +46,14 @@ function createBoycottCard({
   authorName,
   authorPicture,
   tags,
+  id,
 }) {
   // console.log(date);
   const dateString = format(date.toDate());
   // jQuery script to write html cleanly
   $(".card-container").append(
     `<article
+          id="${id}"
           class="card w-full bg-base-300 shadow-xl transition ease-in duration-200 hover:shadow-2xl hover:lg:scale-[105%] hover:shadow-secondary"
         >
           <div class="card-body">
@@ -61,14 +69,23 @@ function createBoycottCard({
             </div>
             <p>${desc}</p>
             <div class="card-actions justify-end mt-2">
-              ${tags.map(
-                (tag) =>
-                  `<div class="badge badge-accent badge-outline">${tag}</div>`
-              )}
+              ${
+                tags == undefined
+                  ? ""
+                  : tags.map(
+                      (tag) =>
+                        `<div class="badge badge-accent badge-outline">${tag}</div>`
+                    )
+              }
             </div>
           </div>
         </article>`
   );
+  // listen for clicks on all article elements
+  document.querySelectorAll("article").forEach((elem) => {
+    // handle click event
+    elem.addEventListener("click", () => openBoycott(elem.id));
+  });
 }
 
 // fetches boycotts from the 'boycotts' collection in the firestore database
