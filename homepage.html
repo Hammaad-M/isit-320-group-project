@@ -1,406 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Head section with important links -->
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/homepage.css" />
+  <!-- Head section with important links -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/homepage.css" />
 
-<!-- Icon links for project -->
-  <script src="https://kit.fontawesome.com/77d09135e8.js" crossorigin="anonymous"></script>
-  <title>Home page</title>
- 
-  <style>
-    :root {
-  --primary: #3abff8;
+    <!-- Icon links for project -->
+    <script
+      src="https://kit.fontawesome.com/77d09135e8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Home page</title>
 
-  --secondary: #828df8;
+    <style>
+      :root {
+        --primary: #3abff8;
 
-  --accent: #f471b5;
+        --secondary: #828df8;
 
-  --neutral: #1d283a;
+        --accent: #f471b5;
 
-  --base-100: #0f1729;
+        --neutral: #1d283a;
 
-  --info: #0ca6e9;
+        --base-100: #0f1729;
 
-  --success: #2bd4bd;
+        --info: #0ca6e9;
 
-  --warning: #f4c152;
+        --success: #2bd4bd;
 
-  --error: #fb6f84;
-}
+        --warning: #f4c152;
 
-html {
-  font-family: Calibri, sans-serif;
-}
+        --error: #fb6f84;
+      }
 
-.wrapper {
-  background-color: gray;
-  width: 100%;
-  min-height: 600px;
-  height: 100vh;
-}
+      html {
+        font-family: Calibri, sans-serif;
+      }
 
-.title {
-  text-align: center;
-  padding: 30px 0;
-  font-size: 60px;
-  font-weight: 300;
-  color: var(--base-100);
-}
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #0f1729;
+      }
+      .wrapper {
+        /* background-color: gray; */
+        width: 100%;
+        min-height: 600px;
+        height: 100vh;
+      }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+      .title {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 60px;
+        font-weight: 300;
+        /* color: var(--base-100); */
+        color: white;
+      }
 
-.nav {
-  margin: 20px auto;
-  width: 580px;
-  height: 50px;
-  padding:  0 20px;
-  background-color: var(--secondary);
-  margin: 10px auto;
-}
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
 
-.nav > li {
-  padding: 10px 0px;
-  margin: 0 25px;
-  float: left;
-}
+      .nav {
+        margin: 20px auto;
+        width: 580px;
+        height: 50px;
+        padding: 0 20px;
+        /* background-color: var(--secondary); */
+        margin: 10px auto;
+      }
 
-.nav > li a {
-  color: #fff;
-  text-decoration: none;
-}
+      .nav > li {
+        padding: 10px 0px;
+        margin: 0 25px;
+        float: left;
+      }
 
-.nav .menu {
-  position: relative;
-}
+      .nav > li a {
+        color: #fff;
+        text-decoration: none;
+      }
 
-.nav .menu:hover .submenu {
-  visibility: visible;
-}
+      .nav .menu {
+        position: relative;
+      }
 
-.nav .menu .submenu {
-  width: 220px;
-  background-color: #fff;
-  position: absolute;
-  top: 40px;
-  left: 15px;
-  box-shadow: 0 5px 10px var(--base-100);
-  visibility: hidden;
-}
+      .nav .menu:hover .submenu {
+        visibility: visible;
+      }
 
-.nav .menu .submenu li {
-  padding: 10px;
-}
+      .nav .menu .submenu {
+        width: 220px;
+        /* background-color: #fff; */
+        position: absolute;
+        top: 40px;
+        left: 15px;
+        box-shadow: 0 5px 10px var(--base-100);
+        visibility: hidden;
+      }
 
-.nav .menu .submenu li a {
-  color: var(--neutral);
-}
+      .nav .menu .submenu li {
+        padding: 10px;
+      }
 
-.nav .menu .submenu li:hover {
-  background-color: var(--secondary);
-}
+      .nav .menu .submenu li a {
+        color: var(--neutral);
+      }
 
-.nav .menu .submenu li:hover a {
-  color: #fff;
-}
+      .nav .menu .submenu li:hover {
+        /* background-color: var(--secondary); */
+      }
 
-.nav .menu .submenu::after {
-  content: "";
-  position: absolute;
-  border: 6px solid;
-  border-color: transparent transparent #fff transparent;
-  top: -12px;
-  left: 6px;
-}
+      .nav .menu .submenu li:hover a {
+        color: #fff;
+      }
 
-img {
-  width: 400px;
-  height: 300px;
-}
+      .nav .menu .submenu::after {
+        content: "";
+        position: absolute;
+        border: 6px solid;
+        border-color: transparent transparent #fff transparent;
+        top: -12px;
+        left: 6px;
+      }
 
-.image-left {
-  margin: 1em 0;
-}
+     .image-left img {
+      width: 100%;
+      height: auto;
+      }
 
-@media (min-width: 20em) {
-  .image-left {
-    display: flex;
-    align-items: center;
-  }
-}
+      .image-left {
+        margin: 1em 0;
+     
+      }
 
-.image-left img {
-  /* margin-right: 1em; */
-  /* float: left; */
-  margin: 5px;
-}
+      @media (min-width: 20em) {
+        .image-left {
+          display: flex;
+          align-items: center;
+        }
+      }
 
-.image-left::after {
-  content: "";
-  display: block;
-  /* clear: both; */
-  
-}
+      .image-left img {
+        /* margin-right: 1em; */
+        /* float: left; */
+        margin: 5px;
+      }
 
-@media (max-width: 700px) {
-  .image-left img {
- 
-   display: none;
-  }
-}
+      .image-left::after {
+        content: "";
+        display: block;
+        /* clear: both; */
+      }
 
-.o {
-  width: 80%;
-}
+      @media (max-width: 700px) {
+        .image-left img {
+          display: none;
+        }
+      }
 
-h2 {
-  text-align: center;
-}
+      .o {
+        width: 80%;
+      }
 
-h3 {
-  text-align: center;
-}
+      h2 {
+        text-align: center;
+      }
 
-.column {
-  float: left;
-  width: 30%;
-  padding: 1px;
-  height: 100px;
-}
+      h3 {
+        text-align: center;
+      }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+      .column {
+        float: left;
+        width: 30%;
+        padding: 1px;
+        height: 100px;
+      }
 
-.div p {
-  margin: 15px;
-}
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
 
-.footer {
-  height: 200px;
-  width: auto;
-  bottom: 0;
- margin-bottom: 0;
-background-color: lightgrey;
- 
-}
+      .div p {
+        margin: 15px;
+      }
 
-button {
-  padding: 20px 60px;
-  background-color: var(--secondary);
-  border: 1px solid var(--neutral);
-  outline: none;
-  transition: 0.5s;
-  box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
-}
-.logo{
-  margin: 20px;
-}
-button:hover {
-  background: transparent;
-  color: var(--base-100);
-}
-.signup {
-  float: right;
-  margin-right: 10px;
-}
+      .footer {
+        height: 200px;
+        width: auto;
+        bottom: 0;
+        margin-bottom: 0;
+        background-color: black;
+      }
 
-.social-menu ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  display: flex;
-}
+      button {
+        padding: 20px 60px;
+        background-color: var(--secondary);
+        border: 1px solid var(--neutral);
+        outline: none;
+        transition: 0.5s;
+        box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+      }
+      .logo {
+        margin: 20px;
+      }
+      button:hover {
+        background: transparent;
+        color: var(--base-100);
+      }
+      .signup {
+        float: right;
+        margin-right: 10px;
+      }
+      .div {
+        color: white;
+      }
+      .div p {
+        font-size: 20px;
+      }
+      .social-menu ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 0;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
 
-.social-menu ul li {
-  list-style: none;
-  margin: 0 15px;
-}
+      .social-menu ul li {
+        list-style: none;
+        margin: 0 15px;
+      }
 
-.social-menu ul li .fab {
-  font-size: 30px;
-  line-height: 60px;
-  transition: 0.3s;
-  color: #000;
-}
+      .social-menu ul li .fab {
+        font-size: 30px;
+        line-height: 60px;
+        transition: 0.3s;
+        color: #000;
+      }
 
-.social-menu ul li .fab:hover {
-  color: #fff;
-}
+      .social-menu ul li .fab:hover {
+        color: #fff;
+      }
 
-.social-menu ul li a {
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #fff;
-  text-align: center;
-  transition: 0.6s;
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
-}
+      .social-menu ul li a {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+        text-align: center;
+        transition: 0.6s;
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+      }
 
-.social-menu ul li a:hover {
-  transform: translate(0, -10%);
-}
+      .social-menu ul li a:hover {
+        transform: translate(0, -10%);
+      }
 
-.social-menu ul li:nth-child(1) a:hover {
-  background-color: #25d366;
-}
-.social-menu ul li:nth-child(2) a:hover {
-  background-color: #0077b5;
-}
+      .social-menu ul li:nth-child(1) a:hover {
+        background-color: #25d366;
+      }
+      .social-menu ul li:nth-child(2) a:hover {
+        background-color: #0077b5;
+      }
 
-.social-menu ul li:nth-child(3) a:hover {
-  background-color: #e4405f;
-}
+      .social-menu ul li:nth-child(3) a:hover {
+        background-color: #e4405f;
+      }
 
-.social-menu ul li:nth-child(4) a:hover {
-  background-color: #3b5998;
-}
-.share h5{
-  font-size: 45px;
-  margin-left: 30px;
-}
+      .social-menu ul li:nth-child(4) a:hover {
+        background-color: #3b5998;
+      }
+      .share h5 {
+        font-size: 45px;
+        margin-left: 30px;
+      }
 
-.jumbotron {
-   
-    margin-bottom: 0;
-    border-bottom: 0;
- 
-    width: 100%;
-  }
-.logo img{
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-}
-  </style>
-  
-</head>
-<!-- Body section start here -->
-<body>
-  <!-- --------Header section------------- -->
-  <div class="title">
-    Align
-    <div class="line"></div>
-  </div>
-  <!-- -------Logo section-------------------->
-  <span class="logo"><img src="./images/alignLogo.png" /></span>
+      .jumbotron {
+        margin-bottom: 0;
+        border-bottom: 0;
 
-  <!-- ----------Login------------------------>
-  <span class="signup">LOGIN</span>
+        width: 100%;
+      }
+      .logo {
+        width: 220px;
+        height: 220px;
+      }
 
-  <!-- Signup page html files linked here -->
-  <span class="signup"><a href="/isit-320-group-project/blob/main/signinpage.html">SIGN UP &nbsp;</a></span>
+      /* ============================== */
+      li,
+      a,
+      button {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        text-decoration: none;
+      }
 
-  <!-- ------------Navigation-------------- -->
-  <ul class="nav">
-    <!-- Different pages linked here -->
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10px;
+      }
+      img {
+        height: 100px;
+      }
+
+      .navLinks {
+        list-style: none;
+      }
+
+      .navLinks li {
+        display: inline-block;
+        padding: 0px 20px;
+      }
+
+      .navLinks a:hover {
+        color: #828df8;
+      }
+
+      button {
+        padding: 9px 25px;
+        background-color: #0ca6e9;
+        border: none;
+        border-radius: 30px;
+      }
+    </style>
+  </head>
+  <!-- Body section start here -->
+  <body>
+    <!-- --------Header section------------- -->
+    <div class="title">
+      Align
+      <div class="line"></div>
+    </div>
+    <!-- -------Logo section-------------------->
+    <!-- <span class="logo"><img src="./images/alignLogo.png" /></span> -->
+
+    <!-- ----------Login------------------------>
+    <!-- <span class="signup">LOGIN</span> -->
+
+    <!-- Signup page html files linked here -->
+    <!-- <span class="signup"><a href="/isit-320-group-project/blob/main/signinpage.html">SIGN UP &nbsp;</a></span> -->
+
+    <!-- ------------Navigation-------------- -->
+    <!-- <ul class="nav">
+    
     <li><a href="/">Home</a></li>
 
-    <!-- BoycottView html files linked here -->
-    <li><a href="/isit-320-group-project/boycott.html">Boycott View</a></li>
+  
+    <li><a href="/isit-320-group-project/blob/main/boycott.html">Boycott View</a></li>
 
-    <!-- CreateBoycott html files linked here -->
-    <li><a href="/isit-320-group-project/createboycott.html">Create Boycotts</a></li> 
+   
+    <li><a href="/isit-320-group-project/blob/main/createboycott.html">Create Boycotts</a></li> 
     <li><a>Contact us</a></li>
-  </ul>
+  </ul> -->
+    <header>
+      <img class="logo" src="./images/alignLogo.png" alt="alignLogo" />
+      <nav>
+        <ul class="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/isit-320-group-project/boycott.html">View Boycotts</a></li>
+          <li><a href="/isit-320-group-project/createboycott.html">Create Boycotts</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </nav>
+      <a href="/isit-320-group-project/signinpage.html"><button>Login</button></a>
+    </header>
 
-  <hr />
-  <!-- ----------Image for content---------------------------- -->
-  <div class="image-left">
-    <img
-      src="https://images.unsplash.com/photo-1592524138886-f4e3170d5ea7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=471&q=80"
-      alt="Human Rights Logo" alt="Human Rights Logo" />
+    <hr />
+    <!-- ----------Image for content---------------------------- -->
+    <div class="image-left">
+      <img
+        src="https://images.unsplash.com/photo-1592524138886-f4e3170d5ea7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=471&q=80"
+        alt="Human Rights Logo"
+        alt="Human Rights Logo"
+      />
       <!-- Introduction section  -->
-    <div class="div">
-      <p>
-        Align is a web application that allows users around the world to share and receive information regarding
-        movements to boycott products and services. A tool to align your purchasing power with your moral beliefs. Align
-        ensures your money in no way supports organizations or companies that contribute to causes that are antithetical
-        to your beliefs. Align will notify you of products to avoid before adding to your shopping cart when online
-        shopping. An Align user can browse our selection of curated boycotts put together by organizers of social
-        movements, activists or political organizations and create their own boycotts to share with other users. The
-        Align application works as a web overlay which is used to provide contextual information on browsed products
-        while online shopping. This first iteration of the project will let a user create a profile, view boycotts, opt
-        in to boycotts and create their own to share
-      </p>
+      <div class="div">
+        <p>
+          Align is a web application that allows users around the world to share
+          and receive information regarding movements to boycott products and
+          services. A tool to align your purchasing power with your moral
+          beliefs. Align ensures your money in no way supports organizations or
+          companies that contribute to causes that are antithetical to your
+          beliefs. Align will notify you of products to avoid before adding to
+          your shopping cart when online shopping. An Align user can browse our
+          selection of curated boycotts put together by organizers of social
+          movements, activists or political organizations and create their own
+          boycotts to share with other users. The Align application works as a
+          web overlay which is used to provide contextual information on browsed
+          products while online shopping. This first iteration of the project
+          will let a user create a profile, view boycotts, opt in to boycotts
+          and create their own to share
+        </p>
+      </div>
     </div>
-  </div>
-  <br />
-  <hr class="o" />
+    <br />
+    <hr class="o" />
 
-  <h2>BOYCOTT EVENTS</h2>
-  <h3><button>Boycott Details</button></h3>
+    <!-- <h2>BOYCOTT EVENTS</h2>
+    <h3><button>Boycott Details</button></h3> -->
 
-  <br />
+    <br />
 
-  <!-- ------------Footer section social media--------------- -->
-  <div class="footer">
-    <div class="social-menu">
-      <div class="jumbotron sticky-top">
-        <div class="container">
-          <div class="share">
-            <h5>Share</h5>
-          </div>
-          <div class="row justify-content-center text-center">
-            <div class="d-none d-lg-block col-xlg-4 pt-1">
-              <ul>
-                <li>
-                  <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </li>
-                <li>
-                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="# " target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a href="# " target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </li>
-              </ul>
+    <!-- ------------Footer section social media--------------- -->
+    <div class="footer">
+      <div class="social-menu">
+        <div class="jumbotron sticky-top">
+          <div class="container">
+            <div class="share">
+              <h5>Share</h5>
+            </div>
+            <div class="row justify-content-center text-center">
+              <div class="d-none d-lg-block col-xlg-4 pt-1">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="# " target="_blank"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="# " target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- firebasejs Section-->
-<script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-  import { getFirestore, collection, doc,  addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-  
-  
-  const firebaseConfig = {
-      apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
-      authDomain: "align-d4038.firebaseapp.com",
-      projectId: "align-d4038",
-      storageBucket: "align-d4038.appspot.com",
-      messagingSenderId: "540706810436",
-      appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
-      measurementId: "G-NS4V9CKKD3",
-    };
-    
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-</script>
+    <!-- firebasejs Section-->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        addDoc,
+        updateDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-</body>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBdwtAPwaM9mqHMXSrobtiWRGjLUidz6as",
+        authDomain: "align-d4038.firebaseapp.com",
+        projectId: "align-d4038",
+        storageBucket: "align-d4038.appspot.com",
+        messagingSenderId: "540706810436",
+        appId: "1:540706810436:web:b05f6cdd7736a5405b2a11",
+        measurementId: "G-NS4V9CKKD3",
+      };
 
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+    </script>
+  </body>
 </html>
