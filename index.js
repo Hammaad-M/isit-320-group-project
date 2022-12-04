@@ -1,13 +1,18 @@
 import { app, auth, provider } from "./firebaseconfig.js";
-import { signInWithPopup,  GoogleAuthProvider,} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
-import {  getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-
+import {
+  getFirestore,
+  doc,
+  setDoc,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const db = getFirestore(app);
 
-
-var userid = ""
+var userid = "";
 
 document.getElementById("si-btn").addEventListener("click", signIn);
 
@@ -39,52 +44,41 @@ document.querySelector("#shareBtn").addEventListener("click", (event) => {
   }
 });
 
+function signIn() {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      userid = result.userid;
+      console.log(result.user);
+      console.log(result.user.uid);
+      const aName = result.user.displayName;
+      const aPicture = result.user.photoURL;
+      const uid = result.user.uid;
 
-
-function signIn (){
-
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    userid = result.userid;
-    console.log(result.user);
-    console.log(result.user.uid);
-    const aName = result.user.displayName;
-    const aPicture = result.user.photoURL;
-    const uid = result.user.uid;
-
-    setDoc(doc(db, "users", uid), {
-      authorName: aName,
-      authorPicture: aPicture,
-      userID: uid,
-      savedBoycotts: [],
-
-      
-
-    },
-    {merge:true},
-    location.replace(`./homepage.html?user=${uid}`)
-    );
-
-
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    console.log(error);
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  })
-
-};
-
-
-  
+      setDoc(
+        doc(db, "users", uid),
+        {
+          authorName: aName,
+          authorPicture: aPicture,
+          userID: uid,
+          savedBoycotts: [],
+        },
+        { merge: true },
+        location.replace(`./homepage.html?user=${uid}`)
+      );
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(error);
+    });
+}
