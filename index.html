@@ -11,32 +11,90 @@
     />
     <link rel="stylesheet" href="boycotts.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- <link href="./navbar.css" rel="stylesheet" /> -->
   </head>
   <body class="bg-neutral min-h-screen">
     <!-- Navigation  -->
+    <!-- <header>
+      <img class="logo" src="alignLogo.png" alt="alignLogo" />
+      <nav>
+        <ul class="navLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">View Boycotts</a></li>
+          <li><a href="#">Saved Boycotts</a></li>
+          <li><a href="#">*Other*</a></li>
+        </ul>
+      </nav>
+      <a href="#"><button>Login</button></a>
+    </header> -->
     <nav class="md:section-padding md:py-4 pb-4">
       <div
         class="navbar bg-neutral bg-base-100 md:rounded-lg w-full px-3 shadow-lg"
       >
         <div class="navbar-start">
           <div class="dropdown dropdown-start">
-            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-              <div class="w-10 rounded-full">
-                <img src="https://placeimg.com/80/80/people" />
-              </div>
+            <label tabindex="0" class="menu btn avatar">
+              <svg
+                width="72px"
+                height="72px"
+                viewBox="0 0 72 72"
+                fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="color" />
+                <g id="hair" />
+                <g id="skin" />
+                <g id="skin-shadow" />
+                <g id="line">
+                  <line
+                    x1="16"
+                    x2="56"
+                    y1="26"
+                    y2="26"
+                    fill="#fff"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="16"
+                    x2="56"
+                    y1="36"
+                    y2="36"
+                    fill="#fff"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="16"
+                    x2="56"
+                    y1="46"
+                    y2="46"
+                    fill="#fff"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="2"
+                  />
+                </g>
+              </svg>
             </label>
             <ul
               tabindex="0"
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a class="justify-between">
-                  Home
-                  <span class="badge">New</span>
+                <a href="./homepage.html" class="justify-between"> Home </a>
+                <a href="./signinpage.html" class="justify-between">
+                  Sign In
                 </a>
               </li>
-              <li><a>Settings</a></li>
-              <li><a class="btn mt-2 btn-outline btn-warning">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -44,7 +102,7 @@
           <a class="btn btn-ghost normal-case text-xl text-left">Boycotts</a>
         </div>
         <div class="navbar-end">
-          <button class="btn gap-2 md:gap-4 btn-primary">
+          <a href="./createboycott.html" class="btn gap-2 md:gap-4 btn-primary">
             <svg
               class="w-4 h-4"
               viewBox="0 0 459.325 459.325"
@@ -61,7 +119,7 @@
                 />
               </g></svg
             >Create
-          </button>
+          </a>
         </div>
       </div>
     </nav>
