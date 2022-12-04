@@ -26,8 +26,6 @@ const db = getFirestore(app);
 
 
 
-const boycottID = "1669689316132"
-
 
 //boycott view fields
 var viewBoycottTitle = document.getElementById("boycott-title");
