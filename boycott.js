@@ -20,8 +20,11 @@ const firebaseConfig = {
   measurementId: "G-NS4V9CKKD3",
 };
 
+//global variables
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const bID = getBoycottIDFromURL();
+const uID = getUserIDFromURL()
 
 
 
@@ -47,6 +50,15 @@ document.getElementById("save-editted-boycott").addEventListener("click", saveEd
 document.querySelector(".close").addEventListener("click", closePopup);
 
 //Populate Boycott View and Popup Views
+
+
+
+
+getBoycott();
+
+
+//functions
+
 function getBoycottIDFromURL() {
   const res = new URLSearchParams(window.location.search);
   const category = res.get("id");
@@ -54,14 +66,13 @@ function getBoycottIDFromURL() {
   return category;
 } 
 
-const bID = getBoycottIDFromURL();
-console.log(bID);
+function getUserIDFromURL() {
+  const res = new URLSearchParams(window.location.search);
+  const user = res.get("user");
+  console.log("user", user);
+  return user;
+}
 
-
-getBoycott();
-
-
-//functions
 
 
 async function getBoycott() {
@@ -76,7 +87,7 @@ let boycottTitle = data.title;
 let boycottCompany = data.companyName;
 let authorName = data.authorName;
 let date = data.date;
-let description = data.desc
+let description = data.desc;
 
 viewBoycottTitle.innerHTML = boycottTitle;
 viewBoycottCompany.innerHTML = boycottCompany;
@@ -105,9 +116,18 @@ function closePopup(){
 
 
 async function saveEdittedBoycott(){
+  
+  const docRef = doc(db, "boycotts", bID);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  let userId = data.userID;
+  let boycottID = data.id
+
+
+  
 
  // if category != 
-
+if (uID==userId){
     await setDoc(doc(db, "boycotts", boycottID), {
       //include if else for user editting = author
 
@@ -123,7 +143,11 @@ async function saveEdittedBoycott(){
     
 },
 {merge:true}
-);
+)} 
+
+else{
+  alert("Editting only available to creator")
+}
 
 closePopup();
 getBoycott();

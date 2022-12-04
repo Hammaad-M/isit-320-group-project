@@ -51,15 +51,24 @@ signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
     userid = result.userid;
+    console.log(result.user);
     console.log(result.user.uid);
+    const aName = result.user.displayName;
+    const aPicture = result.user.photoURL;
+    const uid = result.user.uid;
 
-    const id = result.user.uid;
-    setDoc(doc(db, "users", id), {
-      authorName: "Test Name",
-      authorPicture: "Test URL",
-      userID: id
+    setDoc(doc(db, "users", uid), {
+      authorName: aName,
+      authorPicture: aPicture,
+      userID: uid,
+      savedBoycotts: [],
 
-    });
+      
+
+    },
+    {merge:true},
+    location.replace(`./homepage.html?user=${uid}`)
+    );
 
 
   })

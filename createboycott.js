@@ -6,12 +6,28 @@ const db = getFirestore(app);
 //add event listener to submit button
 const form = document.querySelector("form");
 
+const uID = getUserIDFromURL()
+
+function getUserIDFromURL() {
+  const res = new URLSearchParams(window.location.search);
+  const user = res.get("user");
+  console.log("user", user);
+  return user;
+}
+
+
+
+
+
+
+
 const getUserData = async () => {
   try {
-    const res = await getDoc(doc(db, "users", "roy6M81BV1JVxaOu7GcW"));
+    const res = await getDoc(doc(db, "users", uID));
     const data = res.data();
-    
-    return [data.name, data.picture, data.id];
+    console.log(data);
+    console.log(data.userID);
+    return [data.authorName, data.authorPicture, data.userID];
   } catch (err) {
     console.error(err);
   }
@@ -38,7 +54,7 @@ form.addEventListener("submit", async (e) => {
     }
   }
 
-  const [authorName, authorPicture] = await getUserData();
+  const [authorName, authorPicture, userID] = await getUserData();
   const id = getUniqueID();
   try {
     //using addDoc function to send JSON data to boycottTest collection
@@ -46,6 +62,7 @@ form.addEventListener("submit", async (e) => {
       authorName,
       authorPicture,
       companyName: company,
+      userID,
       desc,
       title,
       date: new Date(),

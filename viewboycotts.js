@@ -23,6 +23,8 @@ const months = [
   "December",
 ];
 
+const uID = getUserIDFromURL()
+
 // formats date object
 // @param Date
 // @returns string (Month Day Year)
@@ -32,9 +34,17 @@ const format = (date) => {
   return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
 };
 
+
+function getUserIDFromURL() {
+  const res = new URLSearchParams(window.location.search);
+  const user = res.get("user");
+  console.log("user", user);
+  return user;
+}
+
 function openBoycott(id) {
   // opening boycott in current tab
-  window.open(`./boycott.html?id=${id}`);
+  window.open(`./boycott.html?id=${id}&user=${uID}`);
 }
 
 // creates boycott element using boycott object from database
