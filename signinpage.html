@@ -16,7 +16,7 @@
           
           -->
 
-            <img src="alignLogo.png" alt="Align Logo" width="100px" /><!--
+            <img src="images/alignLogo.png" alt="Align Logo" width="100px" /><!--
         </div>
           
         </label>-->
@@ -28,10 +28,6 @@
           </div>
           <div class="navbar-end">
             <div id="rscontainer">
-              <button class="btn gap-2 md:gap-4 btn-primary" id="reg-btn">
-                register
-              </button>
-
               <button class="btn gap-2 md:gap-4 btn-primary" id="si-btn">
                 sign in
               </button>
@@ -60,38 +56,6 @@
             <button class="btn gap-2 md:gap-4 btn-primary" id="shareBtn">
               Share
             </button>
-
-            <script>
-              document
-                .querySelector("#shareBtn")
-                .addEventListener("click", (event) => {
-                  // Fallback, Tries to use API only
-                  // if navigator.share function is
-                  // available
-                  if (navigator.share) {
-                    navigator
-                      .share({
-                        // Title that occurs over
-                        // web share dialog
-                        title: "Align",
-
-                        // URL to share
-                        url: "https://Align.com",
-                      })
-                      .then(() => {
-                        console.log("Thanks for sharing!");
-                      })
-                      .catch((err) => {
-                        // Handle errors, if occured
-                        console.log("Error while using Web share API:");
-                        console.log(err);
-                      });
-                  } else {
-                    // Alerts user if API not available
-                    alert("Browser doesn't support this API !");
-                  }
-                });
-            </script>
           </div>
         </div>
       </div>
@@ -100,7 +64,7 @@
       >
         <div id="si-right">
           <div id="money-fist">
-            <img src="moneyFist.jpg" alt="Align Logo" width="400px" />
+            <img src="images/moneyFist.jpg" alt="Align Logo" width="400px" />
           </div>
         </div>
       </div>

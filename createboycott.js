@@ -1,13 +1,4 @@
-import {
-  getFirestore,
-  collection,
-  doc,
-  addDoc,
-  getDoc,
-  setDoc,
-  updateDoc,
-  deleteDoc,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc,} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { app } from "./firebaseconfig.js";
 
 const db = getFirestore(app);
@@ -19,12 +10,14 @@ const getUserData = async () => {
   try {
     const res = await getDoc(doc(db, "users", "roy6M81BV1JVxaOu7GcW"));
     const data = res.data();
-    return [data.name, data.picture];
+    
+    return [data.name, data.picture, data.id];
   } catch (err) {
     console.error(err);
   }
 };
 getUserData();
+
 
 const getUniqueID = () => {
   return `${Date.now()}`;
@@ -65,65 +58,3 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-//-----------------CODE TO BE USED WHEN WE HAVE LIST, EDIT AND DELETE PAGE   -------------------------------------------------------------------------
-
-//   //READING
-//   document
-//     .querySelector("#buttonlistingboycott")
-//     .addEventListener("click", () => {
-//       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
-//       getDoc(
-//         collection(
-//           db,
-//           "boycottTest",
-//           "input boycott id here fetched from listed boycott"
-//         ),
-//         {}
-//       )
-//         .then((docRef) => {
-//           console.log("Document has been added successfully");
-//         })
-//         .catch((error) => {
-//           console.log(error);
-//         });
-//     });
-
-//   //UPDATING
-//   document
-//     .querySelector("#buttonforediting")
-//     .addEventListener("click", () => {
-//       //add id selecters for populated fields, fetch the values which should probably be set as place holders and then set letiables
-//       updateDoc(
-//         collection(
-//           db,
-//           "boycottTest",
-//           "input boycott id here fetched from listed boycott"
-//         ),
-//         {
-//           firstName: fname,
-//           lastName: lname,
-//           bctSummary: bInfo,
-//           bctCompany: company,
-//           bctName: name,
-//         }
-//       )
-//         .then((docRef) => {
-//           console.log("Document has been added successfully");
-//         })
-//         .catch((error) => {
-//           console.log(error);
-//         });
-//     });
-
-//   //DELETING
-//   document
-//     .querySelector("#buttonfordeleting")
-//     .addEventListener("click", () => {
-//       deleteDoc(
-//         collection(
-//           db,
-//           "boycottTest",
-//           "input boycott id here fetched from listed boycott"
-//         )
-//       );
-//     });

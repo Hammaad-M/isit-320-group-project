@@ -22,8 +22,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-//doc elements
-var grabButton = document.getElementById("grab-boycott")
+
+
+
+
+const boycottID = "1669689316132"
+
+
 //boycott view fields
 var viewBoycottTitle = document.getElementById("boycott-title");
 var viewBoycottCompany = document.getElementById("company-name");
@@ -44,6 +49,17 @@ document.getElementById("save-editted-boycott").addEventListener("click", saveEd
 document.querySelector(".close").addEventListener("click", closePopup);
 
 //Populate Boycott View and Popup Views
+function getBoycottIDFromURL() {
+  const res = new URLSearchParams(window.location.search);
+  const category = res.get("id");
+  console.log("id", category);
+  return category;
+} 
+
+const bID = getBoycottIDFromURL();
+console.log(bID);
+
+
 getBoycott();
 
 
@@ -52,9 +68,11 @@ getBoycott();
 
 async function getBoycott() {
 
-const docRef = doc(db, "boycottTest", "v0ekywdRHoTDOmNb40tb");
+const docRef = doc(db, "boycotts", bID);
 const docSnap = await getDoc(docRef);
 const data = docSnap.data();
+
+console.log(data);
 
 let boycottTitle = data.title;
 let boycottCompany = data.companyName;
@@ -78,6 +96,7 @@ popDescription.value = description;
     
   }
 
+
 function editPopup(){
   document.querySelector(".popup").style.display = "flex";
 }
@@ -88,7 +107,10 @@ function closePopup(){
 
 
 async function saveEdittedBoycott(){
-    await setDoc(doc(db, "boycottTest", "v0ekywdRHoTDOmNb40tb"), {
+
+ // if category != 
+
+    await setDoc(doc(db, "boycotts", boycottID), {
       //include if else for user editting = author
 
 
