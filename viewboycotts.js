@@ -23,7 +23,7 @@ const months = [
   "December",
 ];
 
-const uID = getUserIDFromURL()
+const uID = getUserIDFromURL();
 
 // formats date object
 // @param Date
@@ -33,7 +33,6 @@ const format = (date) => {
   console.log(date);
   return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
 };
-
 
 function getUserIDFromURL() {
   const res = new URLSearchParams(window.location.search);
@@ -91,22 +90,25 @@ function createBoycottCard({
           </div>
         </article>`
   );
-  // listen for clicks on all article elements
-  document.querySelectorAll("article").forEach((elem) => {
-    // handle click event
-    elem.addEventListener("click", () => openBoycott(elem.id));
-  });
 }
 
 // fetches boycotts from the 'boycotts' collection in the firestore database
 async function fetchData() {
   console.log("fetching data");
+  // fetch data
   const db = getFirestore(app);
   const boycottsRef = collection(db, "boycotts");
   const q = query(boycottsRef);
   const boycotts = await getDocs(q);
 
+  // create boycott cards
   boycotts.forEach((b) => createBoycottCard(b.data()));
+
+  // listen for clicks on all article elements
+  document.querySelectorAll("article").forEach((elem) => {
+    // handle click event
+    elem.addEventListener("click", () => openBoycott(elem.id));
+  });
 }
 
 fetchData();
