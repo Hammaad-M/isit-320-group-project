@@ -4,7 +4,9 @@ import {
   doc,
   getDoc,
   setDoc,
-  deleteDoc
+  deleteDoc,
+  arrayUnion,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -44,6 +46,7 @@ var popDescription = document.getElementById("pu-description");
 //event listeners
 document.getElementById("edit-boycott").addEventListener("click", editPopup);
 document.getElementById("save-editted-boycott").addEventListener("click", saveEdittedBoycott);
+document.getElementById("save-boycott").addEventListener("click", saveBoycottToUser);
 document.getElementById("delete-boycott").addEventListener("click", deleteBoycott);
 document.querySelector(".close").addEventListener("click", closePopup);
 
@@ -153,6 +156,26 @@ function editPopup(){
 function closePopup(){
   document.querySelector(".popup").style.display = "none";
 }
+
+
+async function saveBoycottToUser(){
+
+  alert("Boycott Saved");
+  
+  const docRef = doc(db, "boycotts", bID);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  let saveUserId = uID;
+//
+// Atomically add a new region to the "regions" array field.
+await updateDoc(docRef, {
+    savedUsers: arrayUnion(saveUserId)
+});
+
+goToBoycottsView();
+
+
+  }
 
 
 async function saveEdittedBoycott(){
