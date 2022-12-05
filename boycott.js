@@ -1,13 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import {
   getFirestore,
-  collection,
   doc,
-  addDoc,
   getDoc,
-  updateDoc,
-  deleteDoc,
   setDoc,
+  deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -47,7 +44,36 @@ var popDescription = document.getElementById("pu-description");
 //event listeners
 document.getElementById("edit-boycott").addEventListener("click", editPopup);
 document.getElementById("save-editted-boycott").addEventListener("click", saveEdittedBoycott);
+document.getElementById("delete-boycott").addEventListener("click", deleteBoycott);
 document.querySelector(".close").addEventListener("click", closePopup);
+
+document.querySelector("#shareBtn").addEventListener("click", (event) => {
+  // Fallback, Tries to use API only
+  // if navigator.share function is
+  // available
+  if (navigator.share) {
+    navigator
+      .share({
+        // Title that occurs over
+        // web share dialog
+        title: "Align",
+
+        // URL to share
+        url: "https://Align.com",
+      })
+      .then(() => {
+        console.log("Thanks for sharing!");
+      })
+      .catch((err) => {
+        // Handle errors, if occured
+        console.log("Error while using Web share API:");
+        console.log(err);
+      });
+  } else {
+    // Alerts user if API not available
+    alert("Browser doesn't support this API !");
+  }
+});
 
 //Populate Boycott View and Popup Views
 
@@ -104,6 +130,20 @@ popCompanyName.value = boycottCompany;
 popDescription.value = description;
     
   }
+
+async function deleteBoycott(){
+  //include confirmation messaging to delete the boycott
+  await deleteDoc(doc(db, "boycotts", bID ));
+  alert(viewBoycottTitle.innerHTML + " has been deleted");
+  goToBoycottsView()
+
+
+}
+
+function goToBoycottsView(){
+  location.replace(`./viewboycotts.html?user=${uID}`)
+
+}
 
 
 function editPopup(){
