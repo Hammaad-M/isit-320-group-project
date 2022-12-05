@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boycotts</title>
+    <title>Your Saved Boycotts</title>
     <meta
       name="description"
       content="View and contribute to a worldwide boycott repository."
@@ -80,7 +80,6 @@
             >
               <li>
                 <a href="javascript:goToHomeView()" class="justify-between"> Home </a>
-                <a href="javascript:goToSavedBoycottsView()">Saved Boycotts</a>
                 <a href="javascript:goToCreateView()">Create Boycotts</a>
                 <a href="./signinpage.html" class="justify-between">
                   Sign In
@@ -123,7 +122,7 @@
     </div>
     <script src="./firebaseconfig.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="./viewboycotts.js" type="module"></script>
+    <script src="./savedboycotts.js" type="module"></script>
     <script>
 
       const uID = getUserIDFromURL()
@@ -136,10 +135,6 @@
 
         function goToCreateView(){
           location.replace(`./createboycott.html?user=${uID}`)
-        }
-
-        function goToSavedBoycottsView(){
-          location.replace(`./savedboycotts.html?user=${uID}`)
         }
 
         function getUserIDFromURL() {

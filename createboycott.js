@@ -70,6 +70,8 @@ form.addEventListener("submit", async (e) => {
       title,
       date: new Date(),
       id,
+      tagwords: tags,
+      savedUsers: [],
     });
 
     alert("Boycott Created!");
