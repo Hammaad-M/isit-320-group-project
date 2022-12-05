@@ -33,6 +33,11 @@
               console.log("user", user);
               return user;
             }
+
+            function goToSavedBoycottsView(){
+          location.replace(`./savedboycotts.html?user=${uID}`)
+        }
+
     
     
     
@@ -41,7 +46,8 @@
         <nav>
             <ul class="navLinks">
                 <li><a href="javascript:goToHomeView()">Home</a></li>
-                <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>                
+                <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>
+                <li><a href="javascript:goToSavedBoycottsView()">Saved Boycotts</a></li>                
             </ul>
         </nav>
         <div></div>
@@ -49,7 +55,6 @@
       </header>
     <!-- created a form  -->
     <form>
-      <button class="goBackButton"><a href="javascript:goToHomeView()">Go Back</a></button>
 
 
       <h2>Boycott Creation Form</h2>
