@@ -15,7 +15,10 @@ function getUserIDFromURL() {
   return user;
 }
 
+function goToBoycottsView(){
+  location.replace(`./viewboycotts.html?user=${uID}`)
 
+}
 
 
 
@@ -69,7 +72,9 @@ form.addEventListener("submit", async (e) => {
       id,
     });
 
-    console.log("Document has been added successfully");
+    alert("Boycott Created!");
+    goToBoycottsView();
+
   } catch (err) {
     console.error(err);
   }
