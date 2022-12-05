@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="viewboycotts.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
   </head>
   <body class="bg-neutral min-h-screen">
     <!-- Navigation  -->
@@ -78,7 +79,8 @@
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a href="./homepage.html" class="justify-between"> Home </a>
+                <a href="javascript:goToHomeView()" class="justify-between"> Home </a>
+                <a href="javascript:goToCreateView()">Create Boycotts</a>
                 <a href="./signinpage.html" class="justify-between">
                   Sign In
                 </a>
@@ -90,7 +92,7 @@
           <a class="btn btn-ghost normal-case text-xl text-left">Boycotts</a>
         </div>
         <div class="navbar-end">
-          <a href="./createboycott.html" class="btn gap-2 md:gap-4 btn-primary">
+          <a href="javascript:goToCreateView()" class="btn gap-2 md:gap-4 btn-primary">
             <svg
               class="w-4 h-4"
               viewBox="0 0 459.325 459.325"
@@ -121,5 +123,30 @@
     <script src="./firebaseconfig.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="./viewboycotts.js" type="module"></script>
+    <script>
+
+      const uID = getUserIDFromURL()
+
+      
+      function goToHomeView(){
+          location.replace(`./homepage.html?user=${uID}`)
+
+        }
+
+        function goToCreateView(){
+          location.replace(`./createboycott.html?user=${uID}`)
+        }
+
+        function getUserIDFromURL() {
+          const res = new URLSearchParams(window.location.search);
+          const user = res.get("user");
+          console.log("user", user);
+          return user;
+        }
+
+
+
+    </script>
+
   </body>
 </html>
