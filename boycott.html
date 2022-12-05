@@ -18,8 +18,8 @@
       <img class="logo" src="images/alignLogo.png" alt="alignLogo">
       <nav>
           <ul class="navLinks">
-              <li><a href="homepage.html">Home</a></li>
-              <li><a href="createboycott.html">Create Boycott</a></li>
+              <li><a href="javascript:goToHomeView()">Home</a></li>
+              <li><a href="javascript:goToCreateView()">Create Boycott</a></li>
               <li><a href="index.html">Sign In</a></li>
               <!-- <li><a href="#">*Other*</a></li> -->
           </ul>
@@ -83,7 +83,35 @@
         </div>
       </div>
       </section>
-      <script type="module" src="boycott.js">
+      <script type="module" src="boycott.js"></script>
+      <script>
+
+        const uID = getUserIDFromURL()
+  
+        
+        function goToHomeView(){
+            location.replace(`./homepage.html?user=${uID}`)
+  
+          }
+  
+          function goToBoycottsView(){
+          location.replace(`./viewboycotts.html?user=${uID}`)
+
+        }
+  
+          function getUserIDFromURL() {
+            const res = new URLSearchParams(window.location.search);
+            const user = res.get("user");
+            console.log("user", user);
+            return user;
+          }
+
+          function goToCreateView(){
+            location.replace(`./createboycott.html?user=${uID}`)
+          }
+  
+  
+  
       </script>
   </body>
 </html>
