@@ -11,25 +11,45 @@
   <body>
       <!-- Navigation bar for users -->
       <header>
+
+        <script>
+
+          const uID = getUserIDFromURL()
+    
+          
+          function goToHomeView(){
+              location.replace(`./homepage.html?user=${uID}`)
+    
+            }
+    
+            function goToBoycottsView(){
+            location.replace(`./viewboycotts.html?user=${uID}`)
+
+          }
+    
+            function getUserIDFromURL() {
+              const res = new URLSearchParams(window.location.search);
+              const user = res.get("user");
+              console.log("user", user);
+              return user;
+            }
+    
+    
+    
+        </script>
         <img class="logo" src="images/alignLogo.png" alt="alignLogo">
         <nav>
             <ul class="navLinks">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="viewboycotts.html">View Boycotts</a></li>
-                <!-- Not really needed for create boycott in create boycott  -->
-                <!-- <li><a href="createboycott.html">Create Boycotts</a></li> -->
-                
+                <li><a href="javascript:goToHomeView()">Home</a></li>
+                <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>                
             </ul>
         </nav>
-        <!-- Login button is NOT needed for a create boycott (which needs you to be logged in) -->
-        <a href="index.html"><button>Contact Us</button></a>
+        <div></div>
+        <!-- <a href="#"><button>Login</button></a> -->
       </header>
     <!-- created a form  -->
     <form>
-      <!-- Commented these out due to not needing them -->
-
-      <!-- <img src="images/alignLogo.png" /> -->
-      <!-- <button class="goBackButton"><a href="homepage.html">Go Back</a></button> -->
+      <button class="goBackButton"><a href="javascript:goToHomeView()">Go Back</a></button>
 
 
       <h2>Boycott Creation Form</h2>
