@@ -136,10 +136,20 @@ popDescription.value = description;
 
 async function deleteBoycott(){
   //include confirmation messaging to delete the boycott
+  
+  const docRef = doc(db, "boycotts", bID);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  let userId = data.userID;
+
+  if (uID==userId){
+
   await deleteDoc(doc(db, "boycotts", bID ));
   alert(viewBoycottTitle.innerHTML + " has been deleted");
   goToBoycottsView()
+  } else {alert("Can only be deleted by author")}
 
+  closePopup();
 
 }
 
