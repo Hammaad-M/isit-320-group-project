@@ -36,25 +36,6 @@
       Align
       <div class="line"></div>
     </div>
-    <!-- -------Logo section-------------------->
-    <!-- <span class="logo"><img src="./images/alignLogo.png" /></span> -->
-
-    <!-- ----------Login------------------------>
-    <!-- <span class="signup">LOGIN</span> -->
-    <!-- Signup page html files linked here -->
-    <!-- <span class="signup"><a href="/isit-320-group-project/blob/main/signinpage.html">SIGN UP &nbsp;</a></span> -->
-
-    <!-- ------------Navigation-------------- -->
-    <!-- <ul class="nav">
-    
-    <li><a href="/">Home</a></li>
-  
-    <li><a href="/isit-320-group-project/blob/main/boycott.html">Boycott View</a></li>
-
-   
-    <li><a href="/isit-320-group-project/blob/main/createboycott.html">Create Boycotts</a></li> 
-    <li><a>Contact us</a></li>
-  </ul> -->
     <header>
       <img class="logo" src="./images/alignLogo.png" alt="alignLogo" />
       <script>
@@ -78,6 +59,10 @@
             return user;
           }
 
+          function goToSavedBoycottsView(){
+          location.replace(`./savedboycotts.html?user=${uID}`)
+        }
+
 
 
       </script>
@@ -85,6 +70,7 @@
         <ul class="navLinks">
           <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>
           <li><a href="javascript:goToCreateView()">Create Boycotts</a></li>
+          <li><a href="javascript:goToSavedBoycottsView()">Saved Boycotts</a></li>
           <li><a href="#">Contacts</a></li>
         </ul>
       </nav>

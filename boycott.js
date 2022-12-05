@@ -143,6 +143,10 @@ async function deleteBoycott(){
 
 }
 
+function goToSavedBoycottsView(){
+  location.replace(`./savedboycotts.html?user=${uID}`)
+}
+
 function goToBoycottsView(){
   location.replace(`./viewboycotts.html?user=${uID}`)
 
@@ -172,7 +176,7 @@ await updateDoc(docRef, {
     savedUsers: arrayUnion(saveUserId)
 });
 
-goToBoycottsView();
+goToSavedBoycottsView();
 
 
   }

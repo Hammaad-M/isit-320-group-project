@@ -81,6 +81,7 @@
               <li>
                 <a href="javascript:goToHomeView()" class="justify-between"> Home </a>
                 <a href="javascript:goToCreateView()">Create Boycotts</a>
+                <a href="javascript:goToBoycottsView()">View All Boycotts</a>
                 <a href="./signinpage.html" class="justify-between">
                   Sign In
                 </a>
@@ -89,7 +90,7 @@
           </div>
         </div>
         <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl text-left">Boycotts</a>
+          <a class="btn btn-ghost normal-case text-xl text-left">Saved Boycotts</a>
         </div>
         <div class="navbar-end">
           <a href="javascript:goToCreateView()" class="btn gap-2 md:gap-4 btn-primary">
@@ -143,6 +144,12 @@
           console.log("user", user);
           return user;
         }
+
+        function goToBoycottsView(){
+            location.replace(`./viewboycotts.html?user=${uID}`)
+
+          }
+
 
 
 
