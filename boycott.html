@@ -12,6 +12,7 @@
     <!-- <link rel="stylesheet" href="theme.css" /> -->
     <link rel="stylesheet" href="boycott.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="boycott.js"></script>
   </head>
   <body>
     <header>
@@ -28,6 +29,26 @@
       <a href="#"></a>
   </header>
     <!-- logo and nav bar -->
+    <header>
+      <img class="logo" src="alignLogo.png" alt="alignLogo">
+      <nav>
+        <ul class="navLinks">
+          <li><a href="javascript:goToHomeView()">Home</a></li>
+          <li><a href="javascript:goToCreateView()">Create Boycott</a></li>
+          <li><a href="index.html">Sign In</a></li>
+          <!-- <li><a href="#">*Other*</a></li> -->
+      </ul>
+      </nav>
+      <a href="#"></a>
+  </header>
+
+<!--     <div class="navigation">
+      <img src="alignLogo.png" alt="Logo" style="width:100px;height:100px;">
+        <div id="nav"><strong><a href=""><strong>Home</strong></a></strong></div>
+        <div id="nav"><strong><a href=""><strong>Boycotts</strong></a></strong></div>
+    </div>  -->
+
+
 
     <!-- header/boycott name -->
     <section id="top">
@@ -45,51 +66,79 @@
          </tr>
           <!-- the company name to boycott -->
             <tr>
-              <td>Company:</td>
-              <td id="company-name">Company name </td>
+              <th>Title:</th>
+              <th>Title here</th>
             </tr>
             <!-- the person/people who established or "called" the boycott -->
             <tr>
-               <td>Boycott Author:</td>
-               <td id="author-name">Author name</td>
+               <td>Company:</td>
+               <td>Company name here</td>
             </tr>
             <!-- the date the boycott was first called -->
               <tr>
-               <td >Boycott Creation Date:</td>
-               <td id="create-date">Date</td>
+               <td>Boycott Creation Date:</td>
+               <td>Date here</td>
             </tr>
-            <!-- social media links or email addresses where the boycotted company can be contacted -->
-
-            <!-- A link to other boycotts in our database pulled from the same category -->
-
           </table>
+
           <!-- the content of the boycott goes here -->
     <section id="post">
-        <p id="boycott-description"></p>
-        <br>
-        <br>
-        <br>
-        <button id="edit-boycott">Edit</button>
-        <button id="save-boycott">Save</button>
-        <div id="si-share">
-          <h2>Share With Your Friends and Colleagues</h2>
-          <button class="btn gap-2 md:gap-4 btn-primary" id="shareBtn">
-            Share
-          </button>
-        </div>
+      <p id="boycott-description"></p>
+      <br>
+      <br>
+      <br>
+      <button id="edit-boycott">Edit</button>
+      <div id="si-share">
+        <h2>Share With Your Friends and Colleagues</h2>
+        <button class="btn gap-2 md:gap-4 btn-primary" id="shareBtn">
+          Share
+        </button>
       </div>
-      <div class="popup">
-        <div class="popup-content">
-          <img src="images/close.png" alt="close" class="close">
-          <p>Edit Boycott</p>
-          <br>
-          <br>          
-          <label>Title: <input type="text" id="pu-boycott-title"></label>
-          <label>Company: <input type="text" id="pu-company"></label>
-          <label>Description: <textarea id="pu-description"></textarea></label>
-          <button id="save-editted-boycott">Save</button>
-          <button id="delete-boycott">Delete</button>
-        </div>
+    </div>
+<!--     <div class="popup">
+      <div class="popup-content">
+        <img src="images/close.png" alt="close" class="close">
+        <p>Edit Boycott</p>
+        <br>
+        <br>          
+        <label>Title: <input type="text" id="pu-boycott-title"></label>
+        <label>Company: <input type="text" id="pu-company"></label>
+        <label>Description: <textarea id="pu-description"></textarea></label>
+        <button id="save-editted-boycott">Save</button>
+        <button id="delete-boycott">Delete</button>
+      </div> -->
+    </div>
+    </section>
+    <script type="module" src="boycott.js"></script>
+    <script>
+
+      const uID = getUserIDFromURL()
+
+      
+      function goToHomeView(){
+          location.replace(`./homepage.html?user=${uID}`)
+
+        }
+
+        function goToBoycottsView(){
+        location.replace(`./viewboycotts.html?user=${uID}`)
+
+      }
+
+        function getUserIDFromURL() {
+          const res = new URLSearchParams(window.location.search);
+          const user = res.get("user");
+          console.log("user", user);
+          return user;
+        }
+
+        function goToCreateView(){
+          location.replace(`./createboycott.html?user=${uID}`)
+        }
+
+
+
+    </script>
       </div>
       </section>
       <script type="module" src="boycott.js"></script>

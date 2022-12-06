@@ -48,23 +48,23 @@ button {
 
 
 body {
-    background-color: #1D283A;
-    font-family: "Open Sans", Arial;
+    background-color: #0F1729;
+    font-family: "Times New Roman", Times, serif;
   }
   
   form {
     line-height: 27px;
   }
 
-  a {
+/*   a {
     text-decoration: none;
     color: #0CA6E9;
-  }
+  } */
 
-  a:hover {
+/*   a:hover {
     text-decoration: underline;
     color: #F471B5;
-  }
+  } */
 
   h1 {
     color: #0CA6E9;
@@ -86,7 +86,7 @@ body {
   #details {
     border: groove;
     position: relative;
-    left: 95px;
+    margin: auto;
     line-height: 45px;
   }
 
@@ -146,7 +146,7 @@ body {
   }
 
 
-   #nav {
+/*    #nav {
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
@@ -155,9 +155,8 @@ body {
     left: 1100px;
     top: -65px;
     
-}
-
-.navigation a {
+} 
+ .navigation a {
     color: #1D283A;
     background-color: #0CA6E9;
     border: 2px solid #0CA6E9;
@@ -174,64 +173,45 @@ body {
     background-color:#1D283A;
     color:#0CA6E9;
 
-}
+} */
 
-textarea
-{
-width: calc(100% - 10px);
-padding: 5px;
-height: 15rem;
-overflow-y: auto;
-}
-
-
-.popup{
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-
-  top: 25%;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-
-
-  display: none;
-  justify-content: center;
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  padding: 20px 10px;
 }
 
-.popup-content {
-  height: 500px;
-  width: 1000px;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
+img {
+  height: 100px;
 }
 
-input{
-  margin: 20px auto;
-  display: block;
-  width: 50%;
-  padding: 8px;
-  border: 1px solid grey;
+.navLinks {
+  list-style: none;
 }
 
-.close{
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: white;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.75) ;
+.navLinks li {
+  display: inline-block;
+  padding: 0px 20px;
 }
 
-.popup-content> p {
-font-weight: 900;
+.navLinks a:hover{
+  color: #828DF8
 }
+
+button {
+  padding: 9px 25px;
+  background-color: #0CA6E9;
+  border: none;
+  border-radius: 30px;
+}
+
+
+li, a, button{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+
