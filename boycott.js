@@ -153,6 +153,7 @@ async function deleteBoycott(){
 
 }
 
+
 function goToSavedBoycottsView(){
   location.replace(`./savedboycotts.html?user=${uID}`)
 }
