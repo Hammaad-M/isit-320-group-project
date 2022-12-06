@@ -15,8 +15,20 @@
     <script src="boycott.js"></script>
   </head>
   <body>
+    <header>
+      <img class="logo" src="images/alignLogo.png" alt="alignLogo">
+      <nav>
+          <ul class="navLinks">
+              <li><a href="javascript:goToHomeView()">Home</a></li>
+              <li><a href="javascript:goToCreateView()">Create Boycott</a></li>
+              <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>
+              <li><a href="index.html">Sign In</a></li>
+              <!-- <li><a href="#">*Other*</a></li> -->
+          </ul>
+      </nav>
+      <a href="#"></a>
+  </header>
     <!-- logo and nav bar -->
-
     <header>
       <img class="logo" src="alignLogo.png" alt="alignLogo">
       <nav>
@@ -37,19 +49,21 @@
     </div>  -->
 
 
+
     <!-- header/boycott name -->
     <section id="top">
         <h1>Boycott!<h1>
     </section>
     <!-- contributor name and personal details -->
     <section id="main">
-        <span class="dot">D</span>  <p><a href="">Dane Joe</a></p>
-        <br>
-      <h6>Member since: November 10, 2022 | Date Posted: November 10, 2022</h6>
       <!-- table with boycott details for each contributor entry -->
       <div class="info">
 
         <table id="details">
+          <tr>
+            <th>Title:</th>
+            <th id="boycott-title">Title</th>
+         </tr>
           <!-- the company name to boycott -->
             <tr>
               <th>Title:</th>
@@ -127,7 +141,35 @@
     </script>
       </div>
       </section>
-    </section>
+      <script type="module" src="boycott.js"></script>
+      <script>
 
+        const uID = getUserIDFromURL()
+  
+        
+        function goToHomeView(){
+            location.replace(`./homepage.html?user=${uID}`)
+  
+          }
+  
+          function goToBoycottsView(){
+          location.replace(`./viewboycotts.html?user=${uID}`)
+
+        }
+  
+          function getUserIDFromURL() {
+            const res = new URLSearchParams(window.location.search);
+            const user = res.get("user");
+            console.log("user", user);
+            return user;
+          }
+
+          function goToCreateView(){
+            location.replace(`./createboycott.html?user=${uID}`)
+          }
+  
+  
+  
+      </script>
   </body>
 </html>

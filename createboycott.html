@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="createboycott.css" rel="stylesheet" type="text/css" />
+    <title>Create Boycott</title>
+  </head>
+
+  <body>
+      <!-- Navigation bar for users -->
+      <header>
+
+        <script>
+
+          const uID = getUserIDFromURL()
+    
+          
+          function goToHomeView(){
+              location.replace(`./homepage.html?user=${uID}`)
+    
+            }
+    
+            function goToBoycottsView(){
+            location.replace(`./viewboycotts.html?user=${uID}`)
+
+          }
+    
+            function getUserIDFromURL() {
+              const res = new URLSearchParams(window.location.search);
+              const user = res.get("user");
+              console.log("user", user);
+              return user;
+            }
+
+            function goToSavedBoycottsView(){
+          location.replace(`./savedboycotts.html?user=${uID}`)
+        }
+
+    
+    
+    
+        </script>
+        <img class="logo" src="images/alignLogo.png" alt="alignLogo">
+        <nav>
+            <ul class="navLinks">
+                <li><a href="javascript:goToHomeView()">Home</a></li>
+                <li><a href="javascript:goToBoycottsView()">View Boycotts</a></li>
+                <li><a href="javascript:goToSavedBoycottsView()">Saved Boycotts</a></li>                
+            </ul>
+        </nav>
+        <div></div>
+        <!-- <a href="#"><button>Login</button></a> -->
+      </header>
+    <!-- created a form  -->
+    <form>
+
+
+      <h2>Boycott Creation Form</h2>
+
+      <div class="boycottdetails">
+        <!-- Asks for what the author wants to name the boycott -->
+        <div class="boycottName">
+          <p>Boycott Name:</p>
+          <input type="text" id="title" placeholder="Name of boycott" />
+        </div>
+
+        <!-- Asks for the company that the author is boycotting -->
+        <div class="companyName">
+          <p>Company Name:</p>
+          <input
+            type="text"
+            id="company"
+            placeholder="Company you're boycotting"
+          />
+        </div>
+
+        <!-- Author can fill in details about their boycott in this box -->
+        <p>Description:</p>
+
+        <textarea
+          id="desc"
+          placeholder="Reason for boycotting the company"
+        ></textarea>
+        <!-- Author can fill in details about their boycott tags in this box -->
+        <p>Keywords (comma seperated):</p>
+
+        <textarea
+          id="tags"
+          placeholder="Relevant keywords for your boycott"
+        ></textarea>
+        <!-- Author clicks button to create their boycott -->
+        <div class="buttonArea">
+          <button type="submit" class="createBoycottButton">
+            Create Boycott
+          </button>
+        </div>
+      </div>
+    </form>
+    <script src="./firebaseconfig.js" type="module"></script>
+    <script src="./createboycott.js" type="module"></script>
+  </body>
+</html>

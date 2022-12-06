@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  transition: .75s;
+}
+
+/* All hovers will have the following  */
+*:hover {
+  transition: .75s;
+  color: #828DF8
+}
+
+/* Changes outer layer color */
+body {
+  background-color: #0f1729;
+  /* background-color: #212121; */
+}
+/* Changes for navigation bar */
+img {
+  height: 100px;
+  float: right;
+}
+
+header{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #0F1729;
+}
+
+header a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+img {
+  height: 100px;
+}
+
+.navLinks {
+  list-style: none;
+}
+
+.navLinks li {
+  display: inline-block;
+  padding: 0px 20px;
+  
+}
+
+button {
+  padding: 9px 25px;
+  background-color: #0CA6E9;
+  border: none;
+  border-radius: 30px;
+}
+
+/* button specifically for the go back */
+/* a{
+  font-size: 16px;
+}
+a:hover {
+  color: black;
+}
+.goBackButton {
+  background-color: #0ca6e9;
+  border-radius: 0.5rem;
+}
+
+.goBackButton:hover {
+  background-color: #828df8;
+} */
+
+/*Form format*/
+form {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1250px;
+  /* background-color: #323232; */
+  background-color: #1d283a;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 3px;
+  border-radius: 15px;
+}
+
+/* Boycott   */
+
+/*removed authorName */
+/* .authorName input {
+  display: flex;
+  justify-content: space-between;
+  float: left;
+  width: 49.5%;
+  padding: 5px;
+  top: 10px;
+} */
+
+/* For the boycott name and company name */
+/* width is specifically 50% to allow mobile users to see placeholder text */
+#title, #company {
+  width: 50%; 
+}
+
+/* Descriptions and keywords textboxes */
+textarea {
+  width: calc(100% - 10px);
+  padding: 5px;
+  height: 15rem;
+  overflow-y: auto;
+}
+
+/* textbox colors, shadows, and styling*/
+
+input,
+textarea,
+::placeholder {
+  background-color: #32323290;
+  color: #828df8;
+  padding: 10px 5px;
+  border-radius: 0.5rem;
+}
+
+/* User hovers the text boxes */
+input:hover,
+textarea:hover {
+  box-shadow: 0px 0px 5px 2px #828df8;
+}
+
+/* Textbox and other font color */
+p,
+h2 {
+  /* color: rgba(195, 195, 195, 0.89); */
+  color: #828df8;
+}
+
+
+
+/* Button Customization */
+.buttonArea {
+  text-align: center;
+}
+/* Button Customization */
+.buttonArea button {
+  padding: 13px 4px;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+}
+/* Button Customization */
+.buttonArea button:hover {
+  background-color: #828df8;
+  box-shadow: 1px 1px 1px #828df8;
+}
+
+.createBoycottButton {
+  background-color: #0ca6e9;
+  color: #0f1729;
+  cursor: pointer;
+  height: 50px;
+  width: 125px;
+}
+
+.createBoycottButton:hover {
+  background-color: #3abff8;
+  
+}
