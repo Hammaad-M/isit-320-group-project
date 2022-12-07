@@ -6,12 +6,13 @@ const db = getFirestore(app);
 //add event listener to submit button
 const form = document.querySelector("form");
 
-const uID = getUserIDFromURL()
+const uID = getUserIDFromURL();
 
 
 function getUserIDFromURL() {
   const res = new URLSearchParams(window.location.search);
-if (res.includes("user")){
+  const resCheck = res.toString()
+if (resCheck.includes("user")){
   
   const user = res.get("user");
   console.log("user", user);
