@@ -23,7 +23,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const bID = getBoycottIDFromURL();
-const uID = getUserIDFromURL()
+const uID = getUserIDFromURL();
+
 
 
 
