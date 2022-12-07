@@ -8,16 +8,23 @@ const form = document.querySelector("form");
 
 const uID = getUserIDFromURL()
 
+
 function getUserIDFromURL() {
   const res = new URLSearchParams(window.location.search);
+if (res.includes("user")){
+  
   const user = res.get("user");
   console.log("user", user);
   return user;
 }
 
+else{alert("Please log in to create boycott")}
+
+}
+
 function goToBoycottsView(){
   location.replace(`./viewboycotts.html?user=${uID}`)
-
+  
 }
 
 
@@ -35,12 +42,19 @@ const getUserData = async () => {
     console.error(err);
   }
 };
+
+
 getUserData();
+
+
+
 
 
 const getUniqueID = () => {
   return `${Date.now()}`;
 };
+
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();

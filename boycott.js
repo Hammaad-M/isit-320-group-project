@@ -115,7 +115,7 @@ console.log(data);
 let boycottTitle = data.title;
 let boycottCompany = data.companyName;
 let authorName = data.authorName;
-let date = data.date;
+let date = data.date.toDate();
 let description = data.desc;
 
 viewBoycottTitle.innerHTML = boycottTitle;
