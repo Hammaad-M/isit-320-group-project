@@ -107,9 +107,8 @@ body {
   }
 
   .info {
-    background-image: url('images/crumpledpaper.jpg');
     border: 2px solid #0F1729;
-    color: #1D283A;
+    color: #0CA6E9;
     padding: 120px;
     text-align: center;
     text-decoration: none;
