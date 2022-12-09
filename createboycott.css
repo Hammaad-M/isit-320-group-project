@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  transition: .75s;
+  transition: .5s;
 }
 
 /* All hovers will have the following  */
 *:hover {
-  transition: .75s;
+  transition: .5s;
   color: #828DF8
 }
 
