@@ -1,3 +1,5 @@
+//importing modules from firestore
+
 import { app, auth, provider } from "./firebaseconfig.js";
 import {
   signInWithPopup,
@@ -12,7 +14,6 @@ import {
 
 const db = getFirestore(app);
 
-var userid = "";
 
 document.getElementById("si-btn").addEventListener("click", signIn);
 
@@ -52,13 +53,12 @@ function signIn() {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      userid = result.userid;
       console.log(result.user);
       console.log(result.user.uid);
       const aName = result.user.displayName;
       const aPicture = result.user.photoURL;
       const uid = result.user.uid;
-
+      //sets our firestore users db
       setDoc(
         doc(db, "users", uid),
         {
@@ -68,8 +68,9 @@ function signIn() {
           savedBoycotts: [],
         },
         { merge: true },
-        location.replace(`./homepage.html?user=${uid}`)
       );
+      //opens homepage with userid in url 
+      window.open(`./homepage.html?user=${uid}`)
     })
     .catch((error) => {
       // Handle Errors here.

@@ -112,7 +112,7 @@ const docSnap = await getDoc(docRef);
 const data = docSnap.data();
 
 console.log(data);
-
+//variables used to set form data 
 let boycottTitle = data.title;
 let boycottCompany = data.companyName;
 let authorName = data.authorName;
@@ -142,7 +142,7 @@ async function deleteBoycott(){
   const docSnap = await getDoc(docRef);
   const data = docSnap.data();
   let userId = data.userID;
-
+  //if else to make sure only user can manipulate boycotts
   if (uID==userId){
 
   await deleteDoc(doc(db, "boycotts", bID ));
